@@ -7,5 +7,13 @@
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
 
   %body
+    %div.container
+      %header#header
+        %h1 MUTRANK REBORN
+
     = yield
+
+    %div.container
+      %footer#footer I made this - Jared Mehle
+
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'

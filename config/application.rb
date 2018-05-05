@@ -8,6 +8,9 @@ Bundler.require(*Rails.groups)
 
 module Mutreborn
   class Application < Rails::Application
+    # set game version
+    DEFAULT_GAME_VERSION = 'madden18'
+
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 5.2
 

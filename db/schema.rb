@@ -10,11 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180307040503) do
+ActiveRecord::Schema.define(version: 2018_03_07_040503) do
 
   # These are extensions that must be enabled in order to support this database
-  enable_extension "plpgsql"
   enable_extension "pgcrypto"
+  enable_extension "plpgsql"
 
   create_table "player_cards", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
     t.string "first_name"
@@ -84,7 +84,7 @@ ActiveRecord::Schema.define(version: 20180307040503) do
     t.boolean "trait_makes_rac_catches"
     t.boolean "trait_makes_possession_catches"
     t.boolean "trait_drops_open_passes"
-    t.boolean "trait_makes_sidelines_catches"
+    t.boolean "trait_makes_sideline_catches"
     t.boolean "trait_qb_style"
     t.boolean "trait_throws_tight_spiral"
     t.string "trait_senses_pressure"

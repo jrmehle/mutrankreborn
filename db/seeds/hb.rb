@@ -1,0 +1,49 @@
+PlayerCard.create do |card|
+  card.first_name          = 'Bo'
+  card.last_name           = 'Jackson'
+  card.overall             = 95
+  card.position            = 'hb'
+  card.speed               = 94
+  card.carrying            = 93
+  card.acceleration        = 95
+  card.elusiveness         = 90
+  card.stamina             = 96
+  card.juke_move           = 96
+  card.spin_move           = 93
+  card.stiff_arm           = 96
+  card.trucking            = 96
+  card.ball_carrier_vision = 94
+  card.agility             = 94
+  card.weight_in_pounds    = 227
+  card.catching            = 74
+  card.catch_in_traffic    = 70
+  card.route_running       = 68
+  card.spectacular_catch   = 63
+  card.awareness           = 93
+  card.jumping             = 94
+end
+
+PlayerCard.create do |card|
+  card.first_name          = 'LaDainian'
+  card.last_name           = 'Tomlinson'
+  card.overall             = 98
+  card.position            = 'hb'
+  card.speed               = 95
+  card.carrying            = 96
+  card.acceleration        = 97
+  card.elusiveness         = 96
+  card.stamina             = 98
+  card.juke_move           = 94
+  card.spin_move           = 95
+  card.stiff_arm           = 98
+  card.trucking            = 81
+  card.ball_carrier_vision = 96
+  card.agility             = 97
+  card.weight_in_pounds    = 215
+  card.catching            = 88
+  card.catch_in_traffic    = 82
+  card.route_running       = 89
+  card.spectacular_catch   = 73
+  card.awareness           = 96
+  card.jumping             = 94
+end

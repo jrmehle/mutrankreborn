@@ -1,0 +1,21 @@
+%h1= [(params[:style].titleize if params[:style]), (params[:position].upcase if params[:position]), 'Player Cards'].join(' ')
+
+%div.container
+  %table
+    %thead
+      %tr
+        %th Rank
+        %th Name
+        %th Overall
+        = render ['player_cards', 'headers', params[:position], params[:style]].join('/') if params[:position] && params[:style]
+        %th Score
+    %tbody
+      - @player_cards.each_with_index do |card, index|
+        %tr
+          %td= index +1
+          %td= card.full_name
+          %td= card.overall
+          = render ['player_cards', 'cells', params[:position], params[:style]].join('/'), card: card if params[:position] && params[:style]
+
+          - if params[:style]
+            %td= number_with_precision(card.score, precision: 1)
