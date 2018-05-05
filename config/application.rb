@@ -9,7 +9,7 @@ Bundler.require(*Rails.groups)
 module Mutreborn
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
-    config.load_defaults 5.1
+    config.load_defaults 5.2
 
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
@@ -19,7 +19,10 @@ module Mutreborn
       g.orm :active_record, primary_key_type: :uuid
     end
 
+    # Allow console for errors in browser
+    config.web_console.whitelisted_ips = '10.0.2.2'
 
     config.autoload_paths << "#{Rails.root}/app/rankers"
+    config.autoload_paths << "#{Rails.root}/app/scorers"
   end
 end
