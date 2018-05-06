@@ -2,7 +2,7 @@ PlayerCard.create do |card|
   card.first_name              = 'Night Train'
   card.last_name               = 'Lane'
   card.overall                 = 99
-  card.position                = 'cb'
+  card.position                = PlayerCard::CORNERBACK
   card.salary_cap_value        = 84
   card.height_in_inches        = 73
   card.weight_in_pounds        = 194
@@ -62,7 +62,7 @@ PlayerCard.create do |card|
   card.first_name              = 'Mel'
   card.last_name               = 'Blount'
   card.overall                 = 97
-  card.position                = 'cb'
+  card.position                = PlayerCard::CORNERBACK
   card.salary_cap_value        = 72
   card.height_in_inches        = 75
   card.weight_in_pounds        = 205

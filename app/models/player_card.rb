@@ -19,14 +19,49 @@ class PlayerCard < ApplicationRecord
   RIGHT_END                = 're'
   DEFENSIVE_TACKLE         = 'dt'
 
-  POSITIONS = [
-    QUARTERBACK, HALFBACK, WIDE_RECEIVER,
-    FULLBACK, TIGHT_END, RIGHT_TACKLE, RIGHT_GUARD,
-    CENTER, LEFT_GUARD, LEFT_TACKLE, FREE_SAFETY,
-    STRONG_SAFETY, CORNERBACK, RIGHT_OUTSIDE_LINEBACKER,
-    MIDDLE_LINEBACKER, LEFT_OUTSIDE_LINEBACKER,
-    LEFT_END, RIGHT_END, DEFENSIVE_TACKLE
-  ]
+  POSITIONS = {
+    QUARTERBACK              => 'Quarterback',
+    HALFBACK                 => 'Halfback',
+    WIDE_RECEIVER            => 'Wide Receiver',
+    FULLBACK                 => 'Fullback',
+    TIGHT_END                => 'Tight End',
+    RIGHT_TACKLE             => 'Right Tackle',
+    RIGHT_GUARD              => 'Right Guard',
+    CENTER                   => 'Center',
+    LEFT_GUARD               => 'Left Guard',
+    LEFT_TACKLE              => 'Left Tackle',
+    FREE_SAFETY              => 'Free Safety',
+    STRONG_SAFETY            => 'Strong Safety',
+    CORNERBACK               => 'Cornerback',
+    RIGHT_OUTSIDE_LINEBACKER => 'Right Outside Linebacker',
+    MIDDLE_LINEBACKER        => 'Middle Linebacker',
+    LEFT_OUTSIDE_LINEBACKER  => 'Left Outside Linebacker',
+    LEFT_END                 => 'Left End',
+    RIGHT_END                => 'Right End',
+    DEFENSIVE_TACKLE         => 'Defensive Tackle'
+  }
+
+  STYLES = {
+    QUARTERBACK              => %w{ dual_threat pocket_passer mobile },
+    HALFBACK                 => %w{ every_down speed power receiving },
+    WIDE_RECEIVER            => %w{ complete pure face_catching blocking },
+    FULLBACK                 => %w{ balanced rushing receiving blocking },
+    TIGHT_END                => %w{ receiving blocking face_catching },
+    RIGHT_TACKLE             => %w{ balanced run_blocking pass_blocking },
+    RIGHT_GUARD              => %w{ balanced run_blocking pass_blocking },
+    CENTER                   => %w{ balanced run_blocking pass_blocking },
+    LEFT_GUARD               => %w{ balanced run_blocking pass_blocking },
+    LEFT_TACKLE              => %w{ balanced run_blocking pass_blocking },
+    FREE_SAFETY              => %w{ balanced coverage run_stuffing user },
+    STRONG_SAFETY            => %w{ balanced coverage run_stuffing user },
+    CORNERBACK               => %w{ shut_down zone man you_shall_not_face_catch run_stuffing nickel },
+    RIGHT_OUTSIDE_LINEBACKER => %w{ 43 34 balanced coverage pass_rush run_stuffing user },
+    MIDDLE_LINEBACKER        => %w{ balanced coverage run_stuffing pass_rush user },
+    LEFT_OUTSIDE_LINEBACKER  => %w{ 43 34 balanced coverage pass_rush run_stuffing user },
+    LEFT_END                 => %w{ 43 34 },
+    RIGHT_END                => %w{ 43 34 },
+    DEFENSIVE_TACKLE         => %w{ 43 34 }
+  }
 
   attr_accessor :score, :style
 
@@ -35,7 +70,8 @@ class PlayerCard < ApplicationRecord
   validates :last_name, presence: true
   validates :position,
     presence: true,
-    inclusion: { in: POSITIONS }
+    inclusion: { in: POSITIONS.keys }
+  validates :overall, inclusion: { in: 1..99 }
   validates :trait_covers_ball,
     inclusion: { in: ['Brace for All Hits', 'Brace vs. Medium Hitters'], allow_nil: true }
   validates :trait_plays_ball_in_air,

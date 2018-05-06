@@ -2,7 +2,7 @@ PlayerCard.create do |card|
   card.first_name          = 'Bo'
   card.last_name           = 'Jackson'
   card.overall             = 95
-  card.position            = 'hb'
+  card.position            = PlayerCard::HALFBACK
   card.speed               = 94
   card.carrying            = 93
   card.acceleration        = 95
@@ -27,7 +27,7 @@ PlayerCard.create do |card|
   card.first_name          = 'LaDainian'
   card.last_name           = 'Tomlinson'
   card.overall             = 98
-  card.position            = 'hb'
+  card.position            = PlayerCard::HALFBACK
   card.speed               = 95
   card.carrying            = 96
   card.acceleration        = 97

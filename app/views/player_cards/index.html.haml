@@ -1,22 +1,31 @@
-%div.container-fluid
-  %h1= [(params[:style].titleize if params[:style]), (params[:position].upcase if params[:position]), 'Player Cards'].join(' ')
+#player_cards.container-fluid
+  .card
+    .card-header
+      %h2= PlayerCard::POSITIONS[params[:position]]
+    .card-body
+      %ul.nav.nav-tabs.nav-fill{ role: 'navigation' }
+        - PlayerCard::STYLES[params[:position]].each do |style|
+          %li.nav-item= link_to style_title(style), players_path(position: params[:position], style: style), class: ['nav-link', ('active' if style == params[:style])]
 
-  %div.table-responsive
-    %table.table.table-striped.table-borderless.table-hover
-      %thead.thead-dark
-        %tr
-          %th{ scope: 'col' } Rank
-          %th{ scope: 'col' } Name
-          %th{ scope: 'col' } Overall
-          = render ['player_cards', 'headers', params[:position], params[:style]].join('/') if params[:position] && params[:style]
-          %th{ scope: 'col' } Score
-      %tbody
-        - @player_cards.each_with_index do |card, index|
-          %tr
-            %th.text-right{ scope: 'row' }= index +1
-            %td= card.full_name
-            %td.text-right= card.overall
-            = render ['player_cards', 'cells', params[:position], params[:style]].join('/'), card: card if params[:position] && params[:style]
+      .table-responsive
+        %table.table.table-sm.table-striped.table-borderless.table-hover
+          %thead.thead-dark
+            %tr
+              %th.text-center{ scope: 'col' } #
+              %th.th-lg.text-center{ scope: 'col' } Name
+              %th.text-center{ scope: 'col' } OVR
+              = render ['player_cards', 'headers', params[:position], params[:style]].join('/') if params[:position] && params[:style]
+              %th.text-center{ scope: 'col' } Score
+          %tbody
+            - @player_cards.each_with_index do |card, index|
+              %tr
+                %th.text-center{ scope: 'row' }
+                  = index +1
+                %td
+                  = card.full_name
+                %td.text-center
+                  = card.overall
+                = render ['player_cards', 'cells', params[:position], params[:style]].join('/'), card: card if params[:position] && params[:style]
 
-            - if params[:style]
-              %td.text-right.font-weight-bold= number_with_precision(card.score, precision: 1)
+                - if params[:style]
+                  %td.text-center.font-weight-bold= number_with_precision card.score, precision: 1

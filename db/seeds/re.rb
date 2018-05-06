@@ -2,7 +2,7 @@ PlayerCard.create do |card|
   card.first_name              = 'Jason'
   card.last_name               = 'Taylor'
   card.overall                 = 97
-  card.position                = 're'
+  card.position                = PlayerCard::RIGHT_END
   card.salary_cap_value        = 60
   card.height_in_inches        = 78
   card.weight_in_pounds        = 244
@@ -60,7 +60,7 @@ PlayerCard.create do |card|
   card.first_name              = 'William'
   card.last_name               = 'Hayes'
   card.overall                 = 89
-  card.position                = 're'
+  card.position                = PlayerCard::RIGHT_END
   card.salary_cap_value        = 35
   card.height_in_inches        = 75
   card.weight_in_pounds        = 278

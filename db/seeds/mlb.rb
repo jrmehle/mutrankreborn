@@ -2,7 +2,7 @@ PlayerCard.create do |card|
   card.first_name              = 'Ray'
   card.last_name               = 'Lewis'
   card.overall                 = 99
-  card.position                = 'mlb'
+  card.position                = PlayerCard::MIDDLE_LINEBACKER
   card.salary_cap_value        = 67
   card.height_in_inches        = 73
   card.weight_in_pounds        = 250
@@ -62,7 +62,7 @@ PlayerCard.create do |card|
   card.first_name              = 'Dont\'a'
   card.last_name               = 'Hightower'
   card.overall                 = 96
-  card.position                = 'mlb'
+  card.position                = PlayerCard::MIDDLE_LINEBACKER
   card.salary_cap_value        = 50
   card.height_in_inches        = 75
   card.weight_in_pounds        = 265

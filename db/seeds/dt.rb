@@ -2,7 +2,7 @@ PlayerCard.create do |card|
   card.first_name              = 'Malik'
   card.last_name               = 'Jackson'
   card.overall                 = 98
-  card.position                = 'dt'
+  card.position                = PlayerCard::DEFENSIVE_TACKLE
   card.salary_cap_value        = 62
   card.height_in_inches        = 77
   card.weight_in_pounds        = 293
@@ -60,7 +60,7 @@ PlayerCard.create do |card|
   card.first_name              = 'Kevin'
   card.last_name               = 'Williams'
   card.overall                 = 98
-  card.position                = 'dt'
+  card.position                = PlayerCard::DEFENSIVE_TACKLE
   card.salary_cap_value        = 63
   card.height_in_inches        = 77
   card.weight_in_pounds        = 311

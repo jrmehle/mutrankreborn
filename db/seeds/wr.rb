@@ -2,7 +2,7 @@ PlayerCard.create do |card|
   card.first_name                    = 'Calvin'
   card.last_name                     = 'Johnson'
   card.overall                       = 96
-  card.position                      = 'wr'
+  card.position                      = PlayerCard::WIDE_RECEIVER
   card.height_in_inches              = 77
   card.weight_in_pounds              = 236
   card.speed                         = 93
@@ -59,7 +59,7 @@ PlayerCard.create do |card|
   card.first_name                    = 'Deandre'
   card.last_name                     = 'Hopkins'
   card.overall                       = 95
-  card.position                      = 'wr'
+  card.position                      = PlayerCard::WIDE_RECEIVER
   card.height_in_inches              = 73
   card.weight_in_pounds              = 207
   card.speed                         = 92

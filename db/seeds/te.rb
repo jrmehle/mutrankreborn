@@ -1,7 +1,7 @@
 PlayerCard.create do |card|
   card.first_name                   = 'Evan'
   card.last_name                    = 'Engram'
-  card.position                     = 'te'
+  card.position                     = PlayerCard::TIGHT_END
   card.overall                      = 96
   card.salary_cap_value             = 56
   card.height_in_inches             = 75
@@ -59,7 +59,7 @@ end
 PlayerCard.create do |card|
   card.first_name                   = 'Crockett'
   card.last_name                    = 'Gilmore'
-  card.position                     = 'te'
+  card.position                     = PlayerCard::TIGHT_END
   card.overall                      = 86
   card.salary_cap_value             = 33
   card.height_in_inches             = 78

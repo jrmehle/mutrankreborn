@@ -7,13 +7,13 @@
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
 
   %body
-    %div.container-fluid
+    .container-fluid
       %header#header
-        %h1 MUTRANK REBORN
+        %h1= link_to 'MUTRANK REBORN', root_path
 
     = yield
 
-    %div.container-fluid
+    .container-fluid
       %footer#footer I made this - Jared Mehle
 
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
