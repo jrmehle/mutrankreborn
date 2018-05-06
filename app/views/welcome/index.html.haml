@@ -1,86 +1,87 @@
-%div.container
+%div.container-fluid
   %h2 Positions
-  %ul
-    %li
+  %div.row
+    %div.col
       %h3 HalfBack
-      %ul
+      %ul.list-unstyled
         %li= link_to 'Every Down', players_path(position: PlayerCard::HALFBACK, style: 'every_down')
         %li= link_to 'Speed',      players_path(position: PlayerCard::HALFBACK, style: 'speed')
         %li= link_to 'Power',      players_path(position: PlayerCard::HALFBACK, style: 'power')
         %li= link_to 'Receiving',  players_path(position: PlayerCard::HALFBACK, style: 'receiving')
-    %li
+
       %h3 Wide Receiver
-      %ul
+      %ul.list-unstyled
         %li= link_to 'Complete',      players_path(position: PlayerCard::WIDE_RECEIVER, style: 'complete')
         %li= link_to 'Pure',          players_path(position: PlayerCard::WIDE_RECEIVER, style: 'pure')
         %li= link_to 'Face Catching', players_path(position: PlayerCard::WIDE_RECEIVER, style: 'face_catching')
         %li= link_to 'Blocking',      players_path(position: PlayerCard::WIDE_RECEIVER, style: 'blocking')
-    %li
+
       %h3 Quarterback
-      %ul
+      %ul.list-unstyled
         %li= link_to 'Dual Threat',   players_path(position: PlayerCard::QUARTERBACK, style: 'dual_threat')
         %li= link_to 'Pocket Passer', players_path(position: PlayerCard::QUARTERBACK, style: 'pocket_passer')
         %li= link_to 'Mobile',        players_path(position: PlayerCard::QUARTERBACK, style: 'mobile')
-    %li
+
       %h3 Tight End
-      %ul
+      %ul.list-unstyled
         %li= link_to 'Receiving',     players_path(position: PlayerCard::TIGHT_END, style: 'receiving')
         %li= link_to 'Blocking',      players_path(position: PlayerCard::TIGHT_END, style: 'blocking')
         %li= link_to 'Face Catching', players_path(position: PlayerCard::TIGHT_END, style: 'face_catching')
-    %li
+
       %h3 Left Tackle
-      %ul
+      %ul.list-unstyled
         %li= link_to 'Balanced',      players_path(position: PlayerCard::LEFT_TACKLE, style: 'balanced')
         %li= link_to 'Run Blocking',  players_path(position: PlayerCard::LEFT_TACKLE, style: 'run_blocking')
         %li= link_to 'Pass Blocking', players_path(position: PlayerCard::LEFT_TACKLE, style: 'pass_blocking')
-    %li
+
       %h3 Left Guard
-      %ul
+      %ul.list-unstyled
         %li= link_to 'Balanced',      players_path(position: PlayerCard::LEFT_GUARD, style: 'balanced')
         %li= link_to 'Run Blocking',  players_path(position: PlayerCard::LEFT_GUARD, style: 'run_blocking')
         %li= link_to 'Pass Blocking', players_path(position: PlayerCard::LEFT_GUARD, style: 'pass_blocking')
-    %li
+
       %h3 Center
-      %ul
+      %ul.list-unstyled
         %li= link_to 'Balanced',      players_path(position: PlayerCard::CENTER, style: 'balanced')
         %li= link_to 'Run Blocking',  players_path(position: PlayerCard::CENTER, style: 'run_blocking')
         %li= link_to 'Pass Blocking', players_path(position: PlayerCard::CENTER, style: 'pass_blocking')
-    %li
+
       %h3 Right Guard
-      %ul
+      %ul.list-unstyled
         %li= link_to 'Balanced',      players_path(position: PlayerCard::RIGHT_GUARD, style: 'balanced')
         %li= link_to 'Run Blocking',  players_path(position: PlayerCard::RIGHT_GUARD, style: 'run_blocking')
         %li= link_to 'Pass Blocking', players_path(position: PlayerCard::RIGHT_GUARD, style: 'pass_blocking')
-    %li
+
       %h3 Right Tackle
-      %ul
+      %ul.list-unstyled
         %li= link_to 'Balanced',      players_path(position: PlayerCard::RIGHT_TACKLE, style: 'balanced')
         %li= link_to 'Run Blocking',  players_path(position: PlayerCard::RIGHT_TACKLE, style: 'run_blocking')
         %li= link_to 'Pass Blocking', players_path(position: PlayerCard::RIGHT_TACKLE, style: 'pass_blocking')
-    %li
+
       %h3 Fullback
-      %ul
+      %ul.list-unstyled
         %li= link_to 'Balanced',  players_path(position: PlayerCard::FULLBACK, style: 'balanced')
         %li= link_to 'Rushing',   players_path(position: PlayerCard::FULLBACK, style: 'rushing')
         %li= link_to 'Receiving', players_path(position: PlayerCard::FULLBACK, style: 'receiving')
         %li= link_to 'Blocking',  players_path(position: PlayerCard::FULLBACK, style: 'blocking')
-    %li
+
+    %div.col
       %h3 Free Safety
-      %ul
+      %ul.list-unstyled
         %li= link_to 'Balanced',     players_path(position: PlayerCard::FREE_SAFETY, style: 'balanced')
         %li= link_to 'Coverage',     players_path(position: PlayerCard::FREE_SAFETY, style: 'Coverage')
         %li= link_to 'Run Stuffing', players_path(position: PlayerCard::FREE_SAFETY, style: 'run_stuffing')
         %li= link_to 'User',         players_path(position: PlayerCard::FREE_SAFETY, style: 'user')
-    %li
+
       %h3 Strong Safety
-      %ul
+      %ul.list-unstyled
         %li= link_to 'Balanced',     players_path(position: PlayerCard::STRONG_SAFETY, style: 'balanced')
         %li= link_to 'Coverage',     players_path(position: PlayerCard::STRONG_SAFETY, style: 'coverage')
         %li= link_to 'Run Stuffing', players_path(position: PlayerCard::STRONG_SAFETY, style: 'run_stuffing')
         %li= link_to 'User',         players_path(position: PlayerCard::STRONG_SAFETY, style: 'user')
-    %li
+
       %h3 Right Outside Linebacker
-      %ul
+      %ul.list-unstyled
         %li= link_to '4-3',          players_path(position: PlayerCard::RIGHT_OUTSIDE_LINEBACKER, style: '43')
         %li= link_to '3-4',          players_path(position: PlayerCard::RIGHT_OUTSIDE_LINEBACKER, style: '34')
         %li= link_to 'Balanced',     players_path(position: PlayerCard::RIGHT_OUTSIDE_LINEBACKER, style: 'balanced')
@@ -88,17 +89,17 @@
         %li= link_to 'Pass Rush',    players_path(position: PlayerCard::RIGHT_OUTSIDE_LINEBACKER, style: 'pass_rush')
         %li= link_to 'Run Stuffing', players_path(position: PlayerCard::RIGHT_OUTSIDE_LINEBACKER, style: 'run_stuffing')
         %li= link_to 'User',         players_path(position: PlayerCard::RIGHT_OUTSIDE_LINEBACKER, style: 'user')
-    %li
+
       %h3 Middle Linebacker
-      %ul
+      %ul.list-unstyled
         %li= link_to 'Balanced',     players_path(position: PlayerCard::MIDDLE_LINEBACKER, style: 'balanced')
         %li= link_to 'Coverage',     players_path(position: PlayerCard::MIDDLE_LINEBACKER, style: 'coverage')
         %li= link_to 'Run Stuffing', players_path(position: PlayerCard::MIDDLE_LINEBACKER, style: 'run_stuffing')
         %li= link_to 'Pass Rush',    players_path(position: PlayerCard::MIDDLE_LINEBACKER, style: 'pass_rush')
         %li= link_to 'User',         players_path(position: PlayerCard::MIDDLE_LINEBACKER, style: 'user')
-    %li
+
       %h3 Left Outside Linebacker
-      %ul
+      %ul.list-unstyled
         %li= link_to '4-3',          players_path(position: PlayerCard::LEFT_OUTSIDE_LINEBACKER, style: '43')
         %li= link_to '3-4',          players_path(position: PlayerCard::LEFT_OUTSIDE_LINEBACKER, style: '34')
         %li= link_to 'Balanced',     players_path(position: PlayerCard::LEFT_OUTSIDE_LINEBACKER, style: 'balanced')
@@ -106,24 +107,24 @@
         %li= link_to 'Pass Rush',    players_path(position: PlayerCard::LEFT_OUTSIDE_LINEBACKER, style: 'pass_rush')
         %li= link_to 'Run Stuffing', players_path(position: PlayerCard::LEFT_OUTSIDE_LINEBACKER, style: 'run_stuffing')
         %li= link_to 'User',         players_path(position: PlayerCard::LEFT_OUTSIDE_LINEBACKER, style: 'user')
-    %li
+
       %h3 Left End
-      %ul
+      %ul.list-unstyled
         %li= link_to '4-3', players_path(position: PlayerCard::LEFT_END, style: '43')
         %li= link_to '3-4', players_path(position: PlayerCard::LEFT_END, style: '34')
-    %li
+
       %h3 Right End
-      %ul
+      %ul.list-unstyled
         %li= link_to '4-3', players_path(position: PlayerCard::RIGHT_END, style: '43')
         %li= link_to '3-4', players_path(position: PlayerCard::RIGHT_END, style: '34')
-    %li
+
       %h3 Defensive Tackle
-      %ul
+      %ul.list-unstyled
         %li= link_to '4-3', players_path(position: PlayerCard::DEFENSIVE_TACKLE, style: '43')
         %li= link_to '3-4', players_path(position: PlayerCard::DEFENSIVE_TACKLE, style: '34')
-    %li
+
       %h3 Cornerback
-      %ul
+      %ul.list-unstyled
         %li= link_to 'Shut Down',                players_path(position: PlayerCard::CORNERBACK, style: 'shut_down')
         %li= link_to 'Zone',                     players_path(position: PlayerCard::CORNERBACK, style: 'zone')
         %li= link_to 'Man',                      players_path(position: PlayerCard::CORNERBACK, style: 'man')
