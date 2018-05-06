@@ -1,6 +1,10 @@
 class PlayerCardScorer
+  attr_accessor :position, :style
+
   def initialize(card:)
     @card         = card
+    @position     = card.position
+    @style        = card.style
     @game_version = @card.game_version.classify.constantize
   end
 
@@ -9,7 +13,7 @@ class PlayerCardScorer
   end
 
   def positional_scorer
-    @klass ||= case @card.position
+    @klass ||= case @position
                when PlayerCard::HALFBACK
                  @game_version::HalfbackScorer
                when PlayerCard::WIDE_RECEIVER
@@ -52,6 +56,6 @@ class PlayerCardScorer
                  BaseScorer
                end
 
-    @klass.new card: @card, style: @card.style
+    @klass.new card: @card, style: @style
   end
 end

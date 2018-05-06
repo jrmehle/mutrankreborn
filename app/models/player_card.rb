@@ -1,4 +1,5 @@
 class PlayerCard < ApplicationRecord
+  # TODO: move to Position utility class
   QUARTERBACK              = 'qb'
   HALFBACK                 = 'hb'
   WIDE_RECEIVER            = 'wr'
@@ -80,13 +81,11 @@ class PlayerCard < ApplicationRecord
     inclusion: { in: %w{ Aggressive Ideal }, allow_nil: true }
   validates :trait_senses_pressure,
     inclusion: { in: ['Trigger Happy', 'Ideal'], allow_nil: true }
-  validates :trait_high_motor,
-    inclusion: { in: [true, false], allow_nil: true }
 
   before_validation :set_default_game_version, on: :create
 
   def full_name
-    [first_name, last_name].join(' ')
+    [first_name, last_name].join(' ').strip
   end
 
   def scorer

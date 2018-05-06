@@ -22,9 +22,6 @@ module Mutreborn
       g.orm :active_record, primary_key_type: :uuid
     end
 
-    # Allow console for errors in browser
-    config.web_console.whitelisted_ips = '10.0.2.2'
-
     config.autoload_paths << "#{Rails.root}/app/rankers"
     config.autoload_paths << "#{Rails.root}/app/scorers"
   end
