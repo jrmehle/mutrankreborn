@@ -74,7 +74,7 @@ class PlayerCard < ApplicationRecord
     inclusion: { in: POSITIONS.keys }
   validates :overall, inclusion: { in: 1..99 }
   validates :trait_covers_ball,
-    inclusion: { in: ['Brace for All Hits', 'Brace vs. Medium Hitters'], allow_nil: true }
+    inclusion: { in: ['Always', 'Brace for All Hits', 'Brace vs. Medium Hitters'], allow_nil: true }
   validates :trait_plays_ball_in_air,
     inclusion: { in: %w{ Aggressive Conservative Balanced }, allow_nil: true }
   validates :trait_forces_passes,

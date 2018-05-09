@@ -21,7 +21,7 @@ RSpec.describe PlayerCard, type: :model do
     .in_array(described_class::POSITIONS.keys) }
   it { is_expected.to validate_inclusion_of(:overall).in_range(1..99) }
   it { is_expected.to validate_inclusion_of(:trait_covers_ball)
-    .in_array(['Brace for All Hits', 'Brace vs. Medium Hitters']) }
+    .in_array(['Always', 'Brace for All Hits', 'Brace vs. Medium Hitters']) }
   it { is_expected.to validate_inclusion_of(:trait_plays_ball_in_air)
     .in_array(%w{ Aggressive Conservative Balanced }) }
   it { is_expected.to validate_inclusion_of(:trait_forces_passes)
