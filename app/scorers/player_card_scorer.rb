@@ -14,43 +14,43 @@ class PlayerCardScorer
 
   def positional_scorer
     @klass ||= case @position
-               when PlayerCard::HALFBACK
+               when Position::HALFBACK
                  @game_version::HalfbackScorer
-               when PlayerCard::WIDE_RECEIVER
+               when Position::WIDE_RECEIVER
                  @game_version::WideReceiverScorer
-               when PlayerCard::QUARTERBACK
+               when Position::QUARTERBACK
                  @game_version::QuarterbackScorer
-               when PlayerCard::TIGHT_END
+               when Position::TIGHT_END
                  @game_version::TightEndScorer
-               when PlayerCard::LEFT_TACKLE
+               when Position::LEFT_TACKLE
                  @game_version::LeftTackleScorer
-               when PlayerCard::LEFT_GUARD
+               when Position::LEFT_GUARD
                  @game_version::LeftGuardScorer
-               when PlayerCard::CENTER
+               when Position::CENTER
                  @game_version::CenterScorer
-               when PlayerCard::RIGHT_GUARD
+               when Position::RIGHT_GUARD
                  @game_version::RightGuardScorer
-               when PlayerCard::RIGHT_TACKLE
+               when Position::RIGHT_TACKLE
                  @game_version::RightTackleScorer
-               when PlayerCard::FULLBACK
+               when Position::FULLBACK
                  @game_version::FullbackScorer
-               when PlayerCard::FREE_SAFETY
+               when Position::FREE_SAFETY
                  @game_version::FreeSafetyScorer
-               when PlayerCard::STRONG_SAFETY
+               when Position::STRONG_SAFETY
                  @game_version::StrongSafetyScorer
-               when PlayerCard::RIGHT_OUTSIDE_LINEBACKER
+               when Position::RIGHT_OUTSIDE_LINEBACKER
                  @game_version::RightOutsideLinebackerScorer
-               when PlayerCard::MIDDLE_LINEBACKER
+               when Position::MIDDLE_LINEBACKER
                  @game_version::MiddleLinebackerScorer
-               when PlayerCard::LEFT_OUTSIDE_LINEBACKER
+               when Position::LEFT_OUTSIDE_LINEBACKER
                  @game_version::LeftOutsideLinebackerScorer
-               when PlayerCard::LEFT_END
+               when Position::LEFT_END
                  @game_version::LeftEndScorer
-               when PlayerCard::RIGHT_END
+               when Position::RIGHT_END
                  @game_version::RightEndScorer
-               when PlayerCard::DEFENSIVE_TACKLE
+               when Position::DEFENSIVE_TACKLE
                  @game_version::DefensiveTackleScorer
-               when PlayerCard::CORNERBACK
+               when Position::CORNERBACK
                  @game_version::CornerbackScorer
                else
                  BaseScorer

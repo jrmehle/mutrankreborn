@@ -2,27 +2,27 @@ class WelcomeController < ApplicationController
   def index
     @positions = {
       offense: [
-        PlayerCard::HALFBACK,
-        PlayerCard::WIDE_RECEIVER,
-        PlayerCard::QUARTERBACK,
-        PlayerCard::TIGHT_END,
-        PlayerCard::LEFT_TACKLE,
-        PlayerCard::LEFT_GUARD,
-        PlayerCard::CENTER,
-        PlayerCard::RIGHT_GUARD,
-        PlayerCard::RIGHT_TACKLE,
-        PlayerCard::FULLBACK
+        Position::HALFBACK,
+        Position::WIDE_RECEIVER,
+        Position::QUARTERBACK,
+        Position::TIGHT_END,
+        Position::LEFT_TACKLE,
+        Position::LEFT_GUARD,
+        Position::CENTER,
+        Position::RIGHT_GUARD,
+        Position::RIGHT_TACKLE,
+        Position::FULLBACK
       ],
       defense: [
-        PlayerCard::FREE_SAFETY,
-        PlayerCard::STRONG_SAFETY,
-        PlayerCard::RIGHT_OUTSIDE_LINEBACKER,
-        PlayerCard::MIDDLE_LINEBACKER,
-        PlayerCard::LEFT_OUTSIDE_LINEBACKER,
-        PlayerCard::LEFT_END,
-        PlayerCard::RIGHT_END,
-        PlayerCard::DEFENSIVE_TACKLE,
-        PlayerCard::CORNERBACK
+        Position::FREE_SAFETY,
+        Position::STRONG_SAFETY,
+        Position::RIGHT_OUTSIDE_LINEBACKER,
+        Position::MIDDLE_LINEBACKER,
+        Position::LEFT_OUTSIDE_LINEBACKER,
+        Position::LEFT_END,
+        Position::RIGHT_END,
+        Position::DEFENSIVE_TACKLE,
+        Position::CORNERBACK
       ]
     }
   end

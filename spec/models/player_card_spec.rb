@@ -18,7 +18,7 @@ RSpec.describe PlayerCard, type: :model do
   it { is_expected.to validate_presence_of :last_name }
   it { is_expected.to validate_presence_of :position }
   it { is_expected.to validate_inclusion_of(:position)
-    .in_array(described_class::POSITIONS.keys) }
+    .in_array(Position.abbreviations) }
   it { is_expected.to validate_inclusion_of(:overall).in_range(1..99) }
   it { is_expected.to validate_inclusion_of(:trait_covers_ball)
     .in_array(['Always', 'Brace for All Hits', 'Brace vs. Medium Hitters']) }

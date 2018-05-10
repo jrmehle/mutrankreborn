@@ -5,7 +5,8 @@ RSpec.describe "root page", type: :request do
     PlayerCard.create(
       position: Position::HALFBACK,
       first_name: 'Bo',
-      last_name: 'Jackson')
+      last_name: 'Jackson',
+      overall: 96)
   end
 
   it "displays all of the positions" do
