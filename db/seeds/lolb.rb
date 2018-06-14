@@ -2,7 +2,8 @@ PlayerCard.create do |card|
   card.first_name              = 'Willie'
   card.last_name               = 'McGinest'
   card.overall                 = 98
-  card.position                = PlayerCard::LEFT_OUTSIDE_LINEBACKER
+  card.team_chemistry_id       = Chemistry.by_team_city(:new_england).first.id
+  card.position                = Position::LEFT_OUTSIDE_LINEBACKER
   card.salary_cap_value        = 62
   card.height_in_inches        = 77
   card.weight_in_pounds        = 270
@@ -62,7 +63,8 @@ PlayerCard.create do |card|
   card.first_name              = 'Rickey'
   card.last_name               = 'Jackson'
   card.overall                 = 99
-  card.position                = PlayerCard::LEFT_OUTSIDE_LINEBACKER
+  card.team_chemistry_id       = Chemistry.by_team_city(:new_orleans).first.id
+  card.position                = Position::LEFT_OUTSIDE_LINEBACKER
   card.salary_cap_value        = 63
   card.height_in_inches        = 75
   card.weight_in_pounds        = 238

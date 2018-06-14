@@ -10,11 +10,40 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_03_07_040503) do
+ActiveRecord::Schema.define(version: 2018_06_03_171101) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "pgcrypto"
   enable_extension "plpgsql"
+
+  create_table "chemistries", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
+    t.string "name"
+    t.text "description"
+    t.jsonb "tier_1_boosts"
+    t.jsonb "tier_2_boosts"
+    t.jsonb "tier_3_boosts"
+    t.jsonb "tier_4_boosts"
+    t.jsonb "tier_5_boosts"
+    t.jsonb "tier_6_boosts"
+    t.jsonb "tier_7_boosts"
+    t.jsonb "tier_8_boosts"
+    t.jsonb "tier_9_boosts"
+    t.jsonb "tier_10_boosts"
+    t.jsonb "tier_11_boosts"
+    t.jsonb "tier_12_boosts"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "player_card_chemistries", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
+    t.uuid "player_card_id"
+    t.uuid "chemistry_id"
+    t.integer "tier"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["chemistry_id"], name: "index_player_card_chemistries_on_chemistry_id"
+    t.index ["player_card_id"], name: "index_player_card_chemistries_on_player_card_id"
+  end
 
   create_table "player_cards", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
     t.string "first_name"
@@ -93,6 +122,10 @@ ActiveRecord::Schema.define(version: 2018_03_07_040503) do
     t.string "game_version"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["game_version"], name: "index_player_cards_on_game_version"
+    t.index ["position"], name: "index_player_cards_on_position"
+    t.index ["promotion_id"], name: "index_player_cards_on_promotion_id"
+    t.index ["team_chemistry_id"], name: "index_player_cards_on_team_chemistry_id"
   end
 
 end

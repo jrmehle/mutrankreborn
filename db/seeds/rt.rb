@@ -2,7 +2,8 @@ PlayerCard.create do |card|
   card.first_name                = 'Lane'
   card.last_name                 = 'Johnson'
   card.overall                   = 96
-  card.position                  = PlayerCard::RIGHT_TACKLE
+  card.team_chemistry_id         = Chemistry.by_team_city(:philadelphia).first.id
+  card.position                  = Position::RIGHT_TACKLE
   card.salary_cap_value          = 62
   card.height_in_inches          = 78
   card.weight_in_pounds          = 317
@@ -55,7 +56,8 @@ PlayerCard.create do |card|
   card.first_name                = 'Daryl'
   card.last_name                 = 'Williams'
   card.overall                   = 98
-  card.position                  = PlayerCard::RIGHT_TACKLE
+  card.team_chemistry_id         = Chemistry.by_team_city(:carolina).first.id
+  card.position                  = Position::RIGHT_TACKLE
   card.salary_cap_value          = 67
   card.height_in_inches          = 78
   card.weight_in_pounds          = 335

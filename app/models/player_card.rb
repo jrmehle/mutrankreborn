@@ -1,6 +1,10 @@
 class PlayerCard < ApplicationRecord
   attr_accessor :score, :style
 
+  belongs_to :team_chemistry, class_name: 'Chemistry', foreign_key: :team_chemistry_id
+  has_many :player_card_chemistries
+  has_many :chemistries, through: :player_card_chemistries
+
   validates :game_version, presence: true
   validates :first_name, presence: true
   validates :last_name, presence: true

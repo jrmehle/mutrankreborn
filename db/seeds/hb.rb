@@ -2,7 +2,8 @@ PlayerCard.create do |card|
   card.first_name          = 'Bo'
   card.last_name           = 'Jackson'
   card.overall             = 95
-  card.position            = PlayerCard::HALFBACK
+  card.team_chemistry_id   = Chemistry.by_team_city(:oakland).first.id
+  card.position            = Position::HALFBACK
   card.speed               = 94
   card.carrying            = 93
   card.acceleration        = 95
@@ -27,7 +28,8 @@ PlayerCard.create do |card|
   card.first_name          = 'LaDainian'
   card.last_name           = 'Tomlinson'
   card.overall             = 98
-  card.position            = PlayerCard::HALFBACK
+  card.team_chemistry_id   = Chemistry.by_team_city(:los_angeles).first.id
+  card.position            = Position::HALFBACK
   card.speed               = 95
   card.carrying            = 96
   card.acceleration        = 97

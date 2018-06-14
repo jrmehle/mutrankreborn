@@ -2,7 +2,8 @@ PlayerCard.create do |card|
   card.first_name                = 'Tom'
   card.last_name                 = 'Brady'
   card.overall                   = 98
-  card.position                  = PlayerCard::QUARTERBACK
+  card.team_chemistry_id         = Chemistry.by_team_city(:new_england).first.id
+  card.position                  = Position::QUARTERBACK
   card.height_in_inches          = 76
   card.weight_in_pounds          = 225
   card.speed                     = 70
@@ -58,7 +59,8 @@ PlayerCard.create do |card|
   card.first_name                = 'Mike'
   card.last_name                 = 'Vick'
   card.overall                   = 97
-  card.position                  = PlayerCard::QUARTERBACK
+  card.team_chemistry_id         = Chemistry.by_team_city(:atlanta).first.id
+  card.position                  = Position::QUARTERBACK
   card.height_in_inches          = 72
   card.weight_in_pounds          = 215
   card.speed                     = 94

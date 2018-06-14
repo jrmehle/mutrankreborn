@@ -1,13 +1,22 @@
 require 'rails_helper'
 
 RSpec.describe PlayerCard, type: :model do
+  let(:team_chemistry) do
+    Chemistry.create(name: Team.city_and_team_name(team_city_or_team_name: :minnesota))
+  end
   subject do
     described_class.new(
       first_name: 'John',
       last_name: 'Madden',
       position: 'qb',
-      overall: 99)
+      overall: 99,
+      team_chemistry_id: team_chemistry.id)
   end
+
+  # Associations
+  it { is_expected.to belong_to :team_chemistry }
+  it { is_expected.to have_many :player_card_chemistries }
+  it { is_expected.to have_many :chemistries }
 
   # Validations
   it 'should validate that :game_version cannot be empty/falsy' do

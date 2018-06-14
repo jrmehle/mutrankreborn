@@ -3,9 +3,9 @@ class CreatePlayerCards < ActiveRecord::Migration[5.1]
     create_table :player_cards, id: :uuid do |t|
       t.string :first_name
       t.string :last_name
-      t.string :position
-      t.uuid :team_chemistry_id
-      t.uuid :promotion_id
+      t.string :position, index: true
+      t.uuid :team_chemistry_id, index: true
+      t.uuid :promotion_id, index: true
       t.integer :salary_cap_value, default: 0
       t.integer :overall, default: 0
       t.integer :height_in_inches, default: 0
@@ -74,7 +74,7 @@ class CreatePlayerCards < ActiveRecord::Migration[5.1]
       t.string :trait_senses_pressure
       t.boolean :trait_throws_ball_away
       t.string :trait_forces_passes
-      t.string :game_version
+      t.string :game_version, index: true
       t.timestamps
     end
   end

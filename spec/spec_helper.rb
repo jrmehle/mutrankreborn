@@ -18,6 +18,7 @@ require 'simplecov'
 SimpleCov.start 'rails' do
   add_group 'Rankers/Scorers', ['app/rankers', 'app/scorers']
   add_group 'Channels', ['app/channels']
+  add_group 'Services', ['app/services']
 end
 
 RSpec.configure do |config|

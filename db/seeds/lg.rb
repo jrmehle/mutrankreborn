@@ -2,7 +2,8 @@ PlayerCard.create do |card|
   card.first_name           = 'Richie'
   card.last_name            = 'Incognito'
   card.overall              = 98
-  card.position             = PlayerCard::LEFT_GUARD
+  card.team_chemistry_id    = Chemistry.by_team_city(:dallas).first.id
+  card.position             = Position::LEFT_GUARD
   card.salary_cap_value     = 71
   card.height_in_inches     = 75
   card.weight_in_pounds     = 19
@@ -55,7 +56,8 @@ PlayerCard.create do |card|
   card.first_name           = 'Randall'
   card.last_name            = 'McDaniel'
   card.overall              = 98
-  card.position             = PlayerCard::LEFT_GUARD
+  card.team_chemistry_id    = Chemistry.by_team_city(:minnesota).first.id
+  card.position             = Position::LEFT_GUARD
   card.salary_cap_value     = 70
   card.height_in_inches     = 75
   card.weight_in_pounds     = 287

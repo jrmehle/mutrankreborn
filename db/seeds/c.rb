@@ -1,8 +1,9 @@
-PlayerCard.create do |card|
+alex_mack = PlayerCard.create do |card|
   card.first_name           = 'Alex'
   card.last_name            = 'Mack'
+  card.team_chemistry_id    = Chemistry.by_team_city(:atlanta).first.id
   card.overall              = 98
-  card.position             = PlayerCard::CENTER
+  card.position             = Position::CENTER
   card.salary_cap_value     = 69
   card.height_in_inches     = 76
   card.weight_in_pounds     = 311
@@ -50,12 +51,16 @@ PlayerCard.create do |card|
   card.kick_return          = 28
   card.trait_high_motor     = true
 end
+PlayerCardChemistry.create(player_card: alex_mack, chemistry: MOVE_THE_STICKS, tier: 2)
+PlayerCardChemistry.create(player_card: alex_mack, chemistry: GO_DEEP, tier: 1)
+PlayerCardChemistry.create(player_card: alex_mack, chemistry: SECURE_PASS_BLOCKER, tier: 1)
 
-PlayerCard.create do |card|
+rodney_hudson = PlayerCard.create do |card|
   card.first_name            = 'Rodney'
   card.last_name             = 'Hudson'
+  card.team_chemistry_id     = Chemistry.by_team_city(:oakland).first.id
   card.overall               = 94
-  card.position              = PlayerCard::CENTER
+  card.position              = Position::CENTER
   card.salary_cap_value      = 50
   card.height_in_inches      = 74
   card.weight_in_pounds      = 300
@@ -103,3 +108,4 @@ PlayerCard.create do |card|
   card.kick_return           = 32
   card.trait_high_motor      = true
 end
+PlayerCardChemistry.create(player_card: rodney_hudson, chemistry: POUND_THE_ROCK, tier: 2)
