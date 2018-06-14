@@ -1,2 +1,78 @@
 @import "bootstrap";
 
+
+body {
+  background: url(asset-path('football-field-blur.jpg')) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;
+  color: #D1D5DE;
+  font-family: 'Fira Sans', sans-serif;
+}
+
+a {
+  color: #8AAA79;
+  text-shadow: #454545 1px 1px 4px;
+
+  &:hover {
+    color: #657153;
+  }
+}
+
+#main-content {
+  background-color:rgba(45,45,45,0.3);
+
+  h3 {
+    color: #837569;
+    text-shadow: #454545 1px 1px 5px;
+    text-decoration: underline #000000 3px;
+    font-family: 'Titillium Web', sans-serif;
+  }
+
+  a {
+  color: #D1D5DE;
+
+  &:hover {
+    color: #B7B6C2;
+  }
+}
+}
+
+#player-cards {
+  padding: 5em 1em;
+
+  .card {
+    background: transparent;
+  }
+
+  .table .thead-dark {
+    background-color: #837569;
+
+    th {
+      background: transparent;
+    }
+  }
+
+  .nav-tabs {
+    .nav-link {
+      text-shadow: none;
+
+      &:hover, &:focus {
+        background-color: #D1D5DE;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 1200px) {
+  .table th[data-abbrev] div {
+    display: none;
+  }
+
+  .table th[data-abbrev]:after {
+    content: attr(data-abbrev);
+    display: block;
+    text-align: center;
+  }
+}

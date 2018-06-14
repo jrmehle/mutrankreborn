@@ -10,4 +10,17 @@ module PlayerCardsHelper
     else style.titleize
     end
   end
+
+  def stat_table_header(stat, options = {})
+    td_class = case options[:td_class].class.name
+      when String then "#{options[:td_class]} text-center"
+      when Array then ['text-center'] + options[:td_class]
+    end
+
+    capture_haml do
+      haml_tag(:th, class: td_class, data: { abbrev: PlayerStat.stat_abbreviation(stat_name: stat) } ) do
+        haml_tag(:div, stat.to_s.titleize, class: 'text-center')
+      end
+    end
+  end
 end
