@@ -1,3 +1,4 @@
+# TODO: move to madden18 directory (new stats in Madden 19)
 class PlayerStat
   STATS = {
     overall:              'OVR',
