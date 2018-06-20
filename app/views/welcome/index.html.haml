@@ -3,7 +3,8 @@
     - @positions.each do |position_group_name, position_group|
       .col
         - position_group.each do |position|
-          %h3= Position.name_from_abbreviation(abbreviation: position)
-          %ul.list-unstyled.mutposition{ id: position }
-            - Position.styles(position_name_or_abbreviation: position).each do |style|
-              %li= link_to style_title(style), players_path(position: position, style: style)
+          .card.shadow{ data: { position: position } }
+            %h3= Position.name_from_abbreviation(abbreviation: position)
+            %ul.list-unstyled.mutposition{ id: position }
+              - Position.styles(position_name_or_abbreviation: position).each do |style|
+                %li= link_to style_title(style), players_path(position: position, style: style)

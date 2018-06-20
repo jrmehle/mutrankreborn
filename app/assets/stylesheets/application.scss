@@ -1,67 +1,92 @@
 @import "bootstrap";
 
+$light-grey:  #D1D5DE;
+$dark-grey:   #545359;
+$brown:       #837569;
+$dark-green:  #657153;
+$light-green: #8AAA79;
+
+$titillium-web: 'Titillium Web', Arial, sans-serif;
+$fira-sans:     'Fira Sans', Helvetica, sans-serif;
 
 body {
   background: url(asset-path('football-field-blur.jpg')) no-repeat center center fixed;
+  background-size: cover;
   -webkit-background-size: cover;
   -moz-background-size: cover;
-  background-size: cover;
   -o-background-size: cover;
-  color: #D1D5DE;
-  font-family: 'Fira Sans', sans-serif;
+  font-family: $fira-sans;
 }
 
-a {
-  color: #8AAA79;
-  text-shadow: #454545 1px 1px 4px;
+#header h1 a {
+  font-family: $titillium-web;
+  color: $light-grey;
+  text-shadow: $dark-grey 1px 1px 1px;
 
   &:hover {
-    color: #657153;
+    text-decoration: none;
+    color: $light-green;
   }
 }
 
 #main-content {
-  background-color:rgba(45,45,45,0.3);
+  padding: 3em 0;
 
   h3 {
-    color: #837569;
-    text-shadow: #454545 1px 1px 5px;
-    text-decoration: underline #000000 3px;
-    font-family: 'Titillium Web', sans-serif;
-  }
-
-  a {
-  color: #D1D5DE;
-
-  &:hover {
-    color: #B7B6C2;
+    font-weight: bold;
+    font-family: $titillium-web;
+    letter-spacing: 0.1em;
   }
 }
+
+#welcome {
+  .card {
+    padding-left: 0.5em;
+    margin-bottom: 2.5em;
+    background-color: rgba(240,240,240,0.80);
+
+    a {
+      color: $dark-grey;
+
+      &:hover {
+        color: $dark-green;
+      }
+    }
+  }
 }
 
 #player-cards {
-  padding: 5em 1em;
+  .nav-link {
+    padding: 0.25rem 0.5rem;
+    font-weight: bold;
+    color: $light-grey;
+    background-color: $light-green;
+    border-color: $dark-green;
 
+    &:hover {
+      border-color: $dark-green;
+      color: $light-green;
+      background-color: $dark-green;
+    }
+
+    &.active {
+      color: $dark-grey;
+      background-color: $light-grey;
+      border-color: $dark-green;
+    }
+  }
+
+
+  thead {
+    color: $light-grey;
+    background-color: $dark-green;
+  }
+}
+
+
+#welcome, #player-cards {
   .card {
-    background: transparent;
-  }
-
-  .table .thead-dark {
-    background-color: #837569;
-
-    th {
-      background: transparent;
-    }
-  }
-
-  .nav-tabs {
-    .nav-link {
-      text-shadow: none;
-
-      &:hover, &:focus {
-        background-color: #D1D5DE;
-      }
-    }
+    background-color: rgba(240,240,240,0.80);
   }
 }
 
@@ -75,4 +100,11 @@ a {
     display: block;
     text-align: center;
   }
+}
+
+#footer {
+  border-top: 1px solid $light-grey;
+  padding-bottom: 2.5em;
+  text-align: right;
+  color: $light-grey;
 }
