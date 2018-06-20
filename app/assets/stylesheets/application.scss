@@ -62,9 +62,10 @@ body {
     color: $light-grey;
     background-color: $light-green;
     border-color: $dark-green;
+    border-bottom: none;
 
     &:hover {
-      border-color: $dark-green;
+      border-color: $brown;
       color: $light-green;
       background-color: $dark-green;
     }
