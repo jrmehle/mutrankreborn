@@ -49,12 +49,11 @@ class PlayerStat
   }
 
   def self.stat_abbreviation(stat_name: )
-    if STATS.keys.include? stat_name
-      STATS[stat_name]
-    end
+    return nil unless STATS.keys.map(&:to_s).include? stat_name.to_s
+    STATS[stat_name.to_sym]
   end
 
   def self.stat_name(stat_abbreviation: )
-    STATS.key(stat_abbreviation).to_s.titleize
+    STATS.key(stat_abbreviation.to_s.upcase).to_s.titleize
   end
 end
