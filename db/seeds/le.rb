@@ -1,4 +1,4 @@
-PlayerCard.create do |card|
+brandon_graham = PlayerCard.create do |card|
   card.first_name              = 'Brandon'
   card.last_name               = 'Graham'
   card.overall                 = 99
@@ -55,9 +55,13 @@ PlayerCard.create do |card|
   card.trait_dl_bull_rush_move = true
   card.trait_big_hitter        = true
   card.trait_strips_ball       = true
+  card.trait_penalty           = 'Normal'
 end
+PlayerCardChemistry.create(player_card: brandon_graham, chemistry: READ_AND_REACT, tier: 2)
+PlayerCardChemistry.create(player_card: brandon_graham, chemistry: PHYSICAL_FRONT, tier: 1)
+PlayerCardChemistry.create(player_card: brandon_graham, chemistry: JUMP_THE_SNAP, tier: 1)
 
-PlayerCard.create do |card|
+ed_too_tall_jones = PlayerCard.create do |card|
   card.first_name              = 'Ed Too Tall'
   card.last_name               = 'Jones'
   card.overall                 = 99
@@ -114,4 +118,7 @@ PlayerCard.create do |card|
   card.trait_dl_bull_rush_move = true
   card.trait_big_hitter        = true
   card.trait_strips_ball       = false
+  card.trait_penalty           = 'Normal'
 end
+PlayerCardChemistry.create(player_card: ed_too_tall_jones, chemistry: PHYSICAL_FRONT, tier: 2)
+PlayerCardChemistry.create(player_card: ed_too_tall_jones, chemistry: JUMP_THE_SNAP, tier: 1)

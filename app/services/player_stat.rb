@@ -48,6 +48,10 @@ class PlayerStat
     kick_return:          'KR'
   }
 
+  TRAITS = {
+
+  }
+
   def self.stat_abbreviation(stat_name: )
     return nil unless STATS.keys.map(&:to_s).include? stat_name.to_s
     STATS[stat_name.to_sym]

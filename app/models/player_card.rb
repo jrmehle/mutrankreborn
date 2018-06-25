@@ -20,8 +20,14 @@ class PlayerCard < ApplicationRecord
     inclusion: { in: %w{ Aggressive Ideal }, allow_nil: true }
   validates :trait_senses_pressure,
     inclusion: { in: ['Trigger Happy', 'Ideal'], allow_nil: true }
+  validates :trait_penalty,
+    inclusion: { in: %w{ Normal Undisciplined Disciplined }, allow_nil: true }
+  validates :trait_linebacker_style,
+    inclusion: { in: ['Balanced', 'Cover LB'], allow_nil: true }
 
   before_validation :set_default_game_version, on: :create
+
+  delegate :name, :abbreviation, to: :team_chemistry, prefix: true
 
   def full_name
     [first_name, last_name].join(' ').strip
@@ -33,6 +39,10 @@ class PlayerCard < ApplicationRecord
 
   def score
     self.score = scorer.score
+  end
+
+  def chemistries_for_display
+    player_card_chemistries.joins(:chemistry).order('player_card_chemistries.tier DESC, chemistries.display_position')
   end
 
   private

@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(version: 2018_06_03_171101) do
   create_table "chemistries", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
     t.string "name"
     t.text "description"
+    t.integer "display_position"
     t.jsonb "tier_1_boosts"
     t.jsonb "tier_2_boosts"
     t.jsonb "tier_3_boosts"
@@ -33,16 +34,18 @@ ActiveRecord::Schema.define(version: 2018_06_03_171101) do
     t.jsonb "tier_12_boosts"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["display_position"], name: "index_chemistries_on_display_position"
   end
 
   create_table "player_card_chemistries", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
     t.uuid "player_card_id"
     t.uuid "chemistry_id"
-    t.integer "tier"
+    t.integer "tier", default: 1
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["chemistry_id"], name: "index_player_card_chemistries_on_chemistry_id"
     t.index ["player_card_id"], name: "index_player_card_chemistries_on_player_card_id"
+    t.index ["tier"], name: "index_player_card_chemistries_on_tier"
   end
 
   create_table "player_cards", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
@@ -100,6 +103,7 @@ ActiveRecord::Schema.define(version: 2018_06_03_171101) do
     t.boolean "trait_clutch"
     t.boolean "trait_high_motor"
     t.string "trait_linebacker_style"
+    t.string "trait_quarterback_style"
     t.boolean "trait_dl_swim_move"
     t.boolean "trait_dl_spin_move"
     t.boolean "trait_dl_bull_rush_move"
@@ -114,7 +118,6 @@ ActiveRecord::Schema.define(version: 2018_06_03_171101) do
     t.boolean "trait_makes_possession_catches"
     t.boolean "trait_drops_open_passes"
     t.boolean "trait_makes_sideline_catches"
-    t.boolean "trait_qb_style"
     t.boolean "trait_throws_tight_spiral"
     t.string "trait_senses_pressure"
     t.boolean "trait_throws_ball_away"

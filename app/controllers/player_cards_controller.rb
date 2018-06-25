@@ -18,6 +18,10 @@ class PlayerCardsController < ApplicationController
     end
   end
 
+  def show
+    @player_card = PlayerCard.includes(:player_card_chemistries).where(id: params[:id]).first
+  end
+
   private
 
     def player_card_params

@@ -1,4 +1,4 @@
-PlayerCard.create do |card|
+lane_johnson = PlayerCard.create do |card|
   card.first_name                = 'Lane'
   card.last_name                 = 'Johnson'
   card.overall                   = 96
@@ -50,9 +50,12 @@ PlayerCard.create do |card|
   card.kick_accuracy             = 46
   card.kick_return               = 39
   card.trait_high_motor          = true
+  card.trait_penalty             = 'Normal'
 end
+PlayerCardChemistry.create(player_card: lane_johnson, chemistry: MOVE_THE_STICKS, tier: 2)
+PlayerCardChemistry.create(player_card: lane_johnson, chemistry: SECURE_PASS_BLOCKER, tier: 1)
 
-PlayerCard.create do |card|
+daryl_williams = PlayerCard.create do |card|
   card.first_name                = 'Daryl'
   card.last_name                 = 'Williams'
   card.overall                   = 98
@@ -104,4 +107,66 @@ PlayerCard.create do |card|
   card.kick_accuracy             = 28
   card.kick_return               = 25
   card.trait_high_motor          = true
+  card.trait_penalty             = 'Normal'
 end
+PlayerCardChemistry.create(player_card: daryl_williams, chemistry: MOVE_THE_STICKS, tier: 2)
+PlayerCardChemistry.create(player_card: daryl_williams, chemistry: GO_DEEP, tier: 1)
+PlayerCardChemistry.create(player_card: daryl_williams, chemistry: IDENTIFIED, tier: 1)
+
+jack_conklin = PlayerCard.create do |card|
+  card.first_name                = 'Jack'
+  card.last_name                 = 'Conklin'
+  card.overall                   = 99
+  card.team_chemistry_id         = Chemistry.by_team_city(:tennessee).first.id
+  card.position                  = Position::RIGHT_TACKLE
+  card.salary_cap_value          = 81
+  card.height_in_inches          = 78
+  card.weight_in_pounds          = 308
+  card.speed                     = 80
+  card.strength                  = 93
+  card.agility                   = 70
+  card.acceleration              = 89
+  card.awareness                 = 99
+  card.catching                  = 59
+  card.jumping                   = 71
+  card.stamina                   = 94
+  card.injury                    = 96
+  card.trucking                  = 50
+  card.elusiveness               = 44
+  card.ball_carrier_vision       = 43
+  card.stiff_arm                 = 44
+  card.spin_move                 = 43
+  card.juke_move                 = 43
+  card.carrying                  = 62
+  card.route_running             = 44
+  card.catch_in_traffic          = 44
+  card.spectacular_catch         = 44
+  card.release                   = 49
+  card.throw_power               = 48
+  card.throw_accuracy_short      = 40
+  card.throw_accuracy_mid        = 41
+  card.throw_accuracy_deep       = 41
+  card.throw_on_the_run          = 43
+  card.play_action               = 41
+  card.run_block                 = 99
+  card.pass_block                = 99
+  card.impact_blocking           = 99
+  card.tackle                    = 66
+  card.hit_power                 = 50
+  card.power_moves               = 44
+  card.finesse_moves             = 44
+  card.block_shedding            = 52
+  card.pursuit                   = 54
+  card.play_recognition          = 47
+  card.man_coverage              = 43
+  card.zone_coverage             = 44
+  card.press                     = 42
+  card.kick_power                = 46
+  card.kick_accuracy             = 47
+  card.kick_return               = 41
+  card.trait_high_motor          = true
+  card.trait_penalty             = 'Normal'
+end
+PlayerCardChemistry.create(player_card: jack_conklin, chemistry: GO_DEEP, tier: 2)
+PlayerCardChemistry.create(player_card: jack_conklin, chemistry: SECURE_PASS_BLOCKER, tier: 1)
+PlayerCardChemistry.create(player_card: jack_conklin, chemistry: IDENTIFIED, tier: 1)

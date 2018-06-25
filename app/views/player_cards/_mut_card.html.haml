@@ -1,0 +1,15 @@
+.mut-card{ style: "background-image: url('/assets/card-placeholder.jpg');" }
+  .salary-cap-value SC#{ player_card.salary_cap_value }
+  %h2.name.strong= player_card.full_name
+  .info-bar
+    .overall= player_card.overall
+    .position.small= player_card.position.upcase
+    .team-chemistry.small= player_card.team_chemistry_abbreviation
+    .chemistries
+      - if player_card.player_card_chemistries.any?
+        %ul
+          - player_card.chemistries_for_display.each do |player_card_chemistry|
+            %li.chemistry{ title: player_card_chemistry.chemistry_name, class: [player_card_chemistry.chemistry_abbreviation.downcase,'chemistry'].join('-') }
+              = player_card_chemistry.chemistry_abbreviation
+              - if player_card_chemistry.tier > 1
+                %small.tier x#{ player_card_chemistry.tier }

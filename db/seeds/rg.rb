@@ -1,4 +1,4 @@
-PlayerCard.create do |card|
+marshal_yanda = PlayerCard.create do |card|
   card.first_name                = 'Marshal'
   card.last_name                 = 'Yanda'
   card.overall                   = 97
@@ -50,9 +50,12 @@ PlayerCard.create do |card|
   card.kick_accuracy             = 44
   card.kick_return               = 38
   card.trait_high_motor          = true
+  card.trait_penalty             = 'Disciplined'
 end
+PlayerCardChemistry.create(player_card: marshal_yanda, chemistry: GO_DEEP, tier: 2)
+PlayerCardChemistry.create(player_card: marshal_yanda, chemistry: TOUGHNESS, tier: 1)
 
-PlayerCard.create do |card|
+kevin_zeitler = PlayerCard.create do |card|
   card.first_name                = 'Kevin'
   card.last_name                 = 'Zeitler'
   card.overall                   = 92
@@ -104,4 +107,7 @@ PlayerCard.create do |card|
   card.kick_accuracy             = 41
   card.kick_return               = 38
   card.trait_high_motor          = true
+  card.trait_penalty             = 'Undisciplined'
 end
+PlayerCardChemistry.create(player_card: kevin_zeitler, chemistry: MOVE_THE_STICKS, tier: 1)
+PlayerCardChemistry.create(player_card: kevin_zeitler, chemistry: IDENTIFIED, tier: 1)

@@ -1,7 +1,7 @@
 class Madden18::TightEndScorer < BaseScorer
   def score
     case @style
-    when 'recieving'
+    when 'receiving'
       (@card.catching          * 1.0) +
       (@card.catch_in_traffic  * 1.0) +
       (@card.spectacular_catch * 1.0) +

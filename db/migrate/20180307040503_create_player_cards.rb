@@ -55,6 +55,7 @@ class CreatePlayerCards < ActiveRecord::Migration[5.1]
       t.boolean :trait_clutch
       t.boolean :trait_high_motor
       t.string :trait_linebacker_style
+      t.string :trait_quarterback_style
       t.boolean :trait_dl_swim_move
       t.boolean :trait_dl_spin_move
       t.boolean :trait_dl_bull_rush_move
@@ -69,7 +70,7 @@ class CreatePlayerCards < ActiveRecord::Migration[5.1]
       t.boolean :trait_makes_possession_catches
       t.boolean :trait_drops_open_passes
       t.boolean :trait_makes_sideline_catches
-      t.boolean :trait_qb_style
+      t.string :trait_quarterback_style
       t.boolean :trait_throws_tight_spiral
       t.string :trait_senses_pressure
       t.boolean :trait_throws_ball_away

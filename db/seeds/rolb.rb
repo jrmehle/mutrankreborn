@@ -1,4 +1,4 @@
-PlayerCard.create do |card|
+james_harrison = PlayerCard.create do |card|
   card.first_name              = 'James'
   card.last_name               = 'Harrison'
   card.overall                 = 97
@@ -51,15 +51,19 @@ PlayerCard.create do |card|
   card.kick_return             = 46
   card.trait_clutch            = false
   card.trait_high_motor        = true
+  card.trait_linebacker_style  = 'Balanced'
   card.trait_dl_swim_move      = true
   card.trait_dl_spin_move      = false
   card.trait_dl_bull_rush_move = true
   card.trait_big_hitter        = true
   card.trait_strips_ball       = true
   card.trait_plays_ball_in_air = 'Conservative'
+  card.trait_penalty           = 'Normal'
 end
+PlayerCardChemistry.create(player_card: james_harrison, chemistry: TOUGHNESS, tier: 2)
+PlayerCardChemistry.create(player_card: james_harrison, chemistry: SECURE_TACKLER, tier: 1)
 
-PlayerCard.create do |card|
+lavonte_david = PlayerCard.create do |card|
   card.first_name              = 'Lavonte'
   card.last_name               = 'David'
   card.overall                 = 98
@@ -112,10 +116,15 @@ PlayerCard.create do |card|
   card.kick_return             = 34
   card.trait_clutch            = true
   card.trait_high_motor        = true
+  card.trait_linebacker_style  = 'Cover LB'
   card.trait_dl_swim_move      = false
   card.trait_dl_spin_move      = false
   card.trait_dl_bull_rush_move = false
   card.trait_big_hitter        = true
   card.trait_strips_ball       = true
   card.trait_plays_ball_in_air = 'Balanced'
+  card.trait_penalty           = 'Normal'
 end
+PlayerCardChemistry.create(player_card: lavonte_david, chemistry: READ_AND_REACT, tier: 2)
+PlayerCardChemistry.create(player_card: lavonte_david, chemistry: BLANKET_COVERAGE, tier: 1)
+PlayerCardChemistry.create(player_card: lavonte_david, chemistry: SECURE_TACKLER, tier: 1)

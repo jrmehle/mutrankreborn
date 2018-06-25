@@ -3,6 +3,7 @@ class CreateChemistries < ActiveRecord::Migration[5.2]
     create_table :chemistries, id: :uuid do |t|
       t.string :name
       t.text :description
+      t.integer :display_position, index: true
       t.jsonb :tier_1_boosts
       t.jsonb :tier_2_boosts
       t.jsonb :tier_3_boosts

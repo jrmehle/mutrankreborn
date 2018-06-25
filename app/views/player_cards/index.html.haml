@@ -5,7 +5,7 @@
     .card-body
       %ul.nav.nav-tabs.nav-fill{ role: 'navigation' }
         - Position.styles(position_name_or_abbreviation: params[:position]).each do |style|
-          %li.nav-item= link_to style_title(style), players_path(position: params[:position], style: style), class: ['nav-link', ('active' if style == params[:style])]
+          %li.nav-item= link_to style_title(style), player_cards_path(position: params[:position], style: style), class: ['nav-link', ('active' if style == params[:style])]
 
       .table-responsive
         %table.table.table-sm.table-striped.table-borderless.table-hover
@@ -25,7 +25,7 @@
                 %th.text-center{ scope: 'row' }
                   = index +1
                 %td
-                  = card.full_name
+                  = link_to card.full_name, card
                 %td.text-center
                   = card.overall
                 = render ['player_cards', 'cells', params[:position], params[:style]].join('/'), card: card if params[:position] && params[:style]

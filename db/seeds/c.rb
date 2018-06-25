@@ -50,6 +50,7 @@ alex_mack = PlayerCard.create do |card|
   card.kick_accuracy        = 33
   card.kick_return          = 28
   card.trait_high_motor     = true
+  card.trait_penalty        = 'Normal'
 end
 PlayerCardChemistry.create(player_card: alex_mack, chemistry: MOVE_THE_STICKS, tier: 2)
 PlayerCardChemistry.create(player_card: alex_mack, chemistry: GO_DEEP, tier: 1)
@@ -107,5 +108,6 @@ rodney_hudson = PlayerCard.create do |card|
   card.kick_accuracy         = 36
   card.kick_return           = 32
   card.trait_high_motor      = true
+  card.trait_penalty         = 'Undisciplined'
 end
 PlayerCardChemistry.create(player_card: rodney_hudson, chemistry: POUND_THE_ROCK, tier: 2)

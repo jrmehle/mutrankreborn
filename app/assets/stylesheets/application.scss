@@ -6,8 +6,55 @@ $brown:       #837569;
 $dark-green:  #657153;
 $light-green: #8AAA79;
 
+$pound-the-rock: #4D0B70;
+$move-the-sticks: #02663B;
+$go-deep: #5F0E10;
+$physical-front: #BC03C7;
+$read-and-react: #17AA1F;
+$blanket-coverage: #DD0207;
+$toughness: #A86C24;
+$red-chemistry: #A60202;
+
 $titillium-web: 'Titillium Web', Arial, sans-serif;
 $fira-sans:     'Fira Sans', Helvetica, sans-serif;
+
+.ptr-chemistry { color: $pound-the-rock; }
+.mts-chemistry { color: $move-the-sticks; }
+.gd-chemistry { color: $go-deep; }
+.pf-chemistry { color: $physical-front; }
+.rnr-chemistry { color: $read-and-react; }
+.bc-chemistry { color: $blanket-coverage; }
+.tgh-chemistry { color: $toughness; }
+
+.g-chemistry,
+.b-chemistry,
+.ck-chemistry,
+.c-chemistry,
+.e-chemistry,
+.fk-chemistry,
+.f-chemistry,
+.g-chemistry,
+.h-chemistry,
+.i-chemistry,
+.j-chemistry,
+.l-chemistry,
+.n-chemistry,
+.o-chemistry,
+.p6-chemistry,
+.ps-chemistry,
+.p-chemistry,
+.pp-chemistry,
+.r-chemistry,
+.sp-chemistry,
+.st-chemistry,
+.sr-chemistry,
+.t-chemistry,
+.up-chemistry,
+.u-chemistry {
+
+  color: $red-chemistry;
+}
+
 
 body {
   background: url(asset-path('football-field-blur.jpg')) no-repeat center center fixed;
@@ -30,26 +77,33 @@ body {
 }
 
 #main-content {
-  padding: 3em 0;
+  padding: 3rem 0;
 
   h3 {
     font-weight: bold;
     font-family: $titillium-web;
-    letter-spacing: 0.1em;
+    letter-spacing: 0.1rem;
   }
 }
 
 #welcome {
   .card {
-    padding-left: 0.5em;
-    margin-bottom: 2.5em;
+    padding-left: 0.5rem;
+    margin-bottom: 2.5rem;
     background-color: rgba(240,240,240,0.80);
 
     a {
+      margin: -0.25rem;
+      padding: 0.25rem;
+      -webkit-border-radius: 5px;
+      -moz-border-radius: 5px;
+      border-radius: 5px;
       color: $dark-grey;
 
       &:hover {
-        color: $dark-green;
+        color: $light-green;
+        background-color: $dark-green;
+        text-decoration: none;
       }
     }
   }
@@ -77,18 +131,152 @@ body {
     }
   }
 
-
   thead {
     color: $light-grey;
     background-color: $dark-green;
   }
+
+  tbody td a {
+    color: $dark-grey;
+    display: block;
+
+    &:hover {
+      text-decoration: none;
+      color: $dark-green;
+    }
+  }
 }
 
+#player-card {
+  .stat-group {
+    margin-top: 1.25rem;
+    margin-bottom: 1.25rem;
 
-#welcome, #player-cards {
+    &:first-child {
+      margin-top: 1rem;
+    }
+
+    .list-group-item {
+      background-color: $light-grey;
+      font-size: 0.9rem;
+      padding: 0.5rem 1rem;
+    }
+
+    .badge {
+      background-color: $dark-grey;
+      color: $light-grey;
+      text-shadow: 1px 1px 1px rgba(0,0,0,0.3);
+    }
+  }
+
+  a {
+    margin: -0.25rem;
+    padding: 0.25rem;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    color: $dark-grey;
+
+    &:hover {
+      color: $light-green;
+      background-color: $dark-green;
+      text-decoration: none;
+    }
+  }
+}
+
+.mut-card {
+  position: relative;
+  width: 207px;
+  height: 287px;
+  margin: 1.25rem auto;
+  background-size: cover;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  box-shadow: 6px 6px 12px -3px $dark-grey;
+
+  .salary-cap-value {
+    position: absolute;
+    left: 4px;
+    top: 4px;
+    line-height: 1.25rem;
+  }
+
+  .name {
+    position: absolute;
+    left: 4px;
+    bottom: 4px;
+    font-size: 1.667rem;
+    padding-right: 2.4rem;
+    margin-bottom: 0;
+    font-weight: bold;
+  }
+
+  .info-bar {
+    background-color: rgba(0,0,0,0.35);
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    padding: 0 2px;
+    text-align: center;
+    font-size: 1.25rem;
+    font-weight: bold;
+    text-shadow: 1px 1px 1px rgba(0,0,0,0.7);
+  }
+
+  .overall {
+    font-size: 2rem;
+    line-height: 2rem;
+    margin-top: 0;
+    margin-bottom: 0;
+    color: white;
+  }
+
+  .position {
+    line-height: 1.25rem;
+  }
+
+  .tier {
+    color: $light-grey;
+    font-size: .75rem;
+  }
+
+  .team-chemistry {
+    margin-bottom: 0.25rem;
+    line-height: 1.25rem;
+  }
+
+  .chemistries {
+    ul {
+      margin: 0;
+      padding: 0;
+    }
+
+    li {
+      list-style-type: none;
+      line-height: 1.25rem;
+      letter-spacing: -1px;
+    }
+  }
+
+  .tier {
+    margin-left: -4px;
+  }
+}
+
+#welcome, #player-cards, #player-card {
   .card {
     background-color: rgba(240,240,240,0.80);
   }
+}
+
+#footer {
+  border-top: 1px solid $light-grey;
+  padding-bottom: 2.5rem;
+  text-align: right;
+  color: $light-grey;
 }
 
 @media only screen and (max-width: 1200px) {
@@ -101,11 +289,4 @@ body {
     display: block;
     text-align: center;
   }
-}
-
-#footer {
-  border-top: 1px solid $light-grey;
-  padding-bottom: 2.5em;
-  text-align: right;
-  color: $light-grey;
 }

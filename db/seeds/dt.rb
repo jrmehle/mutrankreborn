@@ -1,4 +1,4 @@
-PlayerCard.create do |card|
+malik_jackson = PlayerCard.create do |card|
   card.first_name              = 'Malik'
   card.last_name               = 'Jackson'
   card.overall                 = 98
@@ -55,63 +55,73 @@ PlayerCard.create do |card|
   card.trait_dl_bull_rush_move = true
   card.trait_big_hitter        = true
   card.trait_strips_ball       = false
+  card.trait_penalty           = 'Undisciplined'
 end
+PlayerCardChemistry.create(player_card: malik_jackson, chemistry: READ_AND_REACT, tier: 1)
+PlayerCardChemistry.create(player_card: malik_jackson, chemistry: BLANKET_COVERAGE, tier: 2)
+PlayerCardChemistry.create(player_card: malik_jackson, chemistry: SECURE_TACKLER, tier: 1)
 
-PlayerCard.create do |card|
-  card.first_name              = 'Kevin'
-  card.last_name               = 'Williams'
-  card.overall                 = 98
-  card.team_chemistry_id       = Chemistry.by_team_city(:minnesota).first.id
-  card.position                = Position::DEFENSIVE_TACKLE
-  card.salary_cap_value        = 63
-  card.height_in_inches        = 77
-  card.weight_in_pounds        = 311
-  card.speed                   = 81
-  card.strength                = 98
-  card.agility                 = 74
-  card.acceleration            = 89
-  card.awareness               = 97
-  card.catching                = 55
-  card.jumping                 = 81
-  card.stamina                 = 90
-  card.injury                  = 97
-  card.trucking                = 48
-  card.elusiveness             = 26
-  card.ball_carrier_vision     = 23
-  card.stiff_arm               = 43
-  card.spin_move               = 32
-  card.juke_move               = 31
-  card.carrying                = 54
-  card.route_running           = 20
-  card.catch_in_traffic        = 54
-  card.spectacular_catch       = 37
-  card.release                 = 15
-  card.throw_power             = 20
-  card.throw_accuracy_short    = 20
-  card.throw_accuracy_mid      = 20
-  card.throw_accuracy_deep     = 15
-  card.throw_on_the_run        = 15
-  card.play_action             = 15
-  card.run_block               = 45
-  card.pass_block              = 45
-  card.impact_blocking         = 95
-  card.tackle                  = 95
-  card.hit_power               = 86
-  card.power_moves             = 96
-  card.finesse_moves           = 79
-  card.block_shedding          = 99
-  card.pursuit                 = 92
-  card.play_recognition        = 97
-  card.man_coverage            = 39
-  card.zone_coverage           = 51
-  card.press                   = 26
-  card.kick_power              = 20
-  card.kick_accuracy           = 20
-  card.kick_return             = 15
-  card.trait_high_motor        = true
-  card.trait_dl_swim_move      = false
-  card.trait_dl_spin_move      = false
-  card.trait_dl_bull_rush_move = true
-  card.trait_big_hitter        = false
-  card.trait_strips_ball       = true
+[PHYSICAL_FRONT, READ_AND_REACT, BLANKET_COVERAGE, TOUGHNESS].each do |chemistry|
+  kevin_williams = PlayerCard.create do |card|
+    card.first_name              = 'Kevin'
+    card.last_name               = 'Williams'
+    card.overall                 = 98
+    card.team_chemistry_id       = Chemistry.by_team_city(:minnesota).first.id
+    card.position                = Position::DEFENSIVE_TACKLE
+    card.salary_cap_value        = 63
+    card.height_in_inches        = 77
+    card.weight_in_pounds        = 311
+    card.speed                   = 81
+    card.strength                = 98
+    card.agility                 = 74
+    card.acceleration            = 89
+    card.awareness               = 97
+    card.catching                = 55
+    card.jumping                 = 81
+    card.stamina                 = 90
+    card.injury                  = 97
+    card.trucking                = 48
+    card.elusiveness             = 26
+    card.ball_carrier_vision     = 23
+    card.stiff_arm               = 43
+    card.spin_move               = 32
+    card.juke_move               = 31
+    card.carrying                = 54
+    card.route_running           = 20
+    card.catch_in_traffic        = 54
+    card.spectacular_catch       = 37
+    card.release                 = 15
+    card.throw_power             = 20
+    card.throw_accuracy_short    = 20
+    card.throw_accuracy_mid      = 20
+    card.throw_accuracy_deep     = 15
+    card.throw_on_the_run        = 15
+    card.play_action             = 15
+    card.run_block               = 45
+    card.pass_block              = 45
+    card.impact_blocking         = 95
+    card.tackle                  = 95
+    card.hit_power               = 86
+    card.power_moves             = 96
+    card.finesse_moves           = 79
+    card.block_shedding          = 99
+    card.pursuit                 = 92
+    card.play_recognition        = 97
+    card.man_coverage            = 39
+    card.zone_coverage           = 51
+    card.press                   = 26
+    card.kick_power              = 20
+    card.kick_accuracy           = 20
+    card.kick_return             = 15
+    card.trait_high_motor        = true
+    card.trait_dl_swim_move      = false
+    card.trait_dl_spin_move      = false
+    card.trait_dl_bull_rush_move = true
+    card.trait_big_hitter        = false
+    card.trait_strips_ball       = true
+    card.trait_penalty           = 'Disciplined'
+  end
+
+  PlayerCardChemistry.create(player_card: kevin_williams, chemistry: chemistry, tier: 2)
+  PlayerCardChemistry.create(player_card: kevin_williams, chemistry: BATTLE_READY, tier: 1)
 end

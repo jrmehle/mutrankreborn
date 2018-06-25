@@ -1,4 +1,4 @@
-PlayerCard.create do |card|
+richie_incognito = PlayerCard.create do |card|
   card.first_name           = 'Richie'
   card.last_name            = 'Incognito'
   card.overall              = 98
@@ -50,58 +50,67 @@ PlayerCard.create do |card|
   card.kick_accuracy        = 28
   card.kick_return          = 29
   card.trait_high_motor     = false
+  card.trait_penalty        = 'Undisciplined'
 end
+PlayerCardChemistry.create(player_card: richie_incognito, chemistry: TOUGHNESS, tier: 2)
+PlayerCardChemistry.create(player_card: richie_incognito, chemistry: POUND_THE_ROCK, tier: 1)
+PlayerCardChemistry.create(player_card: richie_incognito, chemistry: SECURE_PASS_BLOCKER, tier: 1)
 
-PlayerCard.create do |card|
-  card.first_name           = 'Randall'
-  card.last_name            = 'McDaniel'
-  card.overall              = 98
-  card.team_chemistry_id    = Chemistry.by_team_city(:minnesota).first.id
-  card.position             = Position::LEFT_GUARD
-  card.salary_cap_value     = 70
-  card.height_in_inches     = 75
-  card.weight_in_pounds     = 287
-  card.speed                = 72
-  card.strength             = 96
-  card.agility              = 78
-  card.acceleration         = 84
-  card.awareness            = 98
-  card.catching             = 64
-  card.jumping              = 60
-  card.stamina              = 91
-  card.injury               = 97
-  card.trucking             = 73
-  card.elusiveness          = 45
-  card.ball_carrier_vision  = 52
-  card.stiff_arm            = 75
-  card.spin_move            = 20
-  card.juke_move            = 20
-  card.carrying             = 68
-  card.route_running        = 51
-  card.catch_in_traffic     = 58
-  card.spectacular_catch    = 52
-  card.release              = 68
-  card.throw_power          = 25
-  card.throw_accuracy_short = 20
-  card.throw_accuracy_mid   = 15
-  card.throw_accuracy_deep  = 15
-  card.throw_on_the_run     = 15
-  card.play_action          = 15
-  card.run_block            = 97
-  card.pass_block           = 98
-  card.impact_blocking      = 94
-  card.tackle               = 32
-  card.hit_power            = 53
-  card.power_moves          = 20
-  card.finesse_moves        = 20
-  card.block_shedding       = 20
-  card.pursuit              = 20
-  card.play_recognition     = 25
-  card.man_coverage         = 20
-  card.zone_coverage        = 20
-  card.press                = 20
-  card.kick_power           = 20
-  card.kick_accuracy        = 20
-  card.kick_return          = 20
-  card.trait_high_motor     = false
+[POUND_THE_ROCK, MOVE_THE_STICKS, GO_DEEP, TOUGHNESS].each do |chemistry|
+  randall_mcdaniel = PlayerCard.create do |card|
+    card.first_name           = 'Randall'
+    card.last_name            = 'McDaniel'
+    card.overall              = 98
+    card.team_chemistry_id    = Chemistry.by_team_city(:minnesota).first.id
+    card.position             = Position::LEFT_GUARD
+    card.salary_cap_value     = 70
+    card.height_in_inches     = 75
+    card.weight_in_pounds     = 287
+    card.speed                = 72
+    card.strength             = 96
+    card.agility              = 78
+    card.acceleration         = 84
+    card.awareness            = 98
+    card.catching             = 64
+    card.jumping              = 60
+    card.stamina              = 91
+    card.injury               = 97
+    card.trucking             = 73
+    card.elusiveness          = 45
+    card.ball_carrier_vision  = 52
+    card.stiff_arm            = 75
+    card.spin_move            = 20
+    card.juke_move            = 20
+    card.carrying             = 68
+    card.route_running        = 51
+    card.catch_in_traffic     = 58
+    card.spectacular_catch    = 52
+    card.release              = 68
+    card.throw_power          = 25
+    card.throw_accuracy_short = 20
+    card.throw_accuracy_mid   = 15
+    card.throw_accuracy_deep  = 15
+    card.throw_on_the_run     = 15
+    card.play_action          = 15
+    card.run_block            = 97
+    card.pass_block           = 98
+    card.impact_blocking      = 94
+    card.tackle               = 32
+    card.hit_power            = 53
+    card.power_moves          = 20
+    card.finesse_moves        = 20
+    card.block_shedding       = 20
+    card.pursuit              = 20
+    card.play_recognition     = 25
+    card.man_coverage         = 20
+    card.zone_coverage        = 20
+    card.press                = 20
+    card.kick_power           = 20
+    card.kick_accuracy        = 20
+    card.kick_return          = 20
+    card.trait_high_motor     = false
+    card.trait_penalty        = 'Normal'
+  end
+  PlayerCardChemistry.create(player_card: randall_mcdaniel, chemistry: chemistry, tier: 2)
+  PlayerCardChemistry.create(player_card: randall_mcdaniel, chemistry: LEAD_THE_WAY, tier: 1)
 end
