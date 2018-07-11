@@ -80,4 +80,63 @@ RSpec.describe PlayerCard, type: :model do
 
     its(:score) { is_expected.to eq(subject.scorer.score) }
   end
+
+  describe "#chemistries_for_display" do
+    let(:move_the_sticks) do
+      Chemistry.create do |chem|
+        chem.name = 'Move the Sticks'
+        chem.display_position = 1
+        chem.tier_1_boosts = { spin_move: 1, catch_in_traffic: 1, throw_accuracy_short: 1 }
+        chem.tier_2_boosts = { juke_move: 1, route_running: 1, throw_accuracy_mid: 1 }
+        chem.tier_3_boosts = { spin_move: 1, catch_in_traffic: 1, throw_accuracy_short: 1 }
+        chem.tier_4_boosts = { juke_move: 1, route_running: 1, throw_accuracy_mid: 1 }
+        chem.tier_5_boosts = {
+          spin_move: 2,
+          juke_move: 2,
+          catch_in_traffic: 2,
+          route_running: 2,
+          throw_accuracy_short: 2,
+          throw_accuracy_mid: 2
+        }
+      end
+    end
+
+    let(:go_deep) do
+      Chemistry.create do |chem|
+        chem.name = 'Go Deep'
+        chem.display_position = 1
+        chem.tier_1_boosts = { pass_block: 1, release: 1, throw_accuracy_deep: 1 }
+        chem.tier_2_boosts = { throw_power: 1, spectacular_catch: 1, play_action: 1 }
+        chem.tier_3_boosts = { pass_block: 1, release: 1, throw_accuracy_deep: 1 }
+        chem.tier_4_boosts = { throw_power: 1, spectacular_catch: 1, play_action: 1 }
+        chem.tier_5_boosts = {
+          pass_block: 2,
+          throw_power: 2,
+          release: 2,
+          spectacular_catch: 2,
+          throw_accuracy_deep: 2,
+          play_action: 2
+        }
+      end
+    end
+
+    let(:never_stumble) do
+      Chemistry.create do |chem|
+        chem.name             = 'Never Stumble'
+        chem.description      = 'Player will auto-recover in stumble situations'
+        chem.display_position = 2
+      end
+    end
+
+    before do
+      subject.save
+      subject.player_card_chemistries.create(tier: 1, chemistry: move_the_sticks)
+      subject.player_card_chemistries.create(tier: 1, chemistry: never_stumble)
+      subject.player_card_chemistries.create(tier: 2, chemistry: go_deep)
+    end
+
+    it "sorts chemistries by tier first and then display position" do
+      expect(subject.chemistries_for_display.collect(&:chemistry)).to eq([go_deep, move_the_sticks, never_stumble])
+    end
+  end
 end

@@ -61,7 +61,14 @@
     card.trait_plays_ball_in_air = 'Balanced'
     card.trait_penalty           = 'Normal'
   end
-  PlayerCardChemistry.create(player_card: ray_lewis, chemistry: chemistry, tier: 2)
+
+  if chemistry == PHYSICAL_FRONT
+    PlayerCardChemistry.create(player_card: ray_lewis, chemistry: chemistry, tier: 3)
+  else
+    PlayerCardChemistry.create(player_card: ray_lewis, chemistry: chemistry, tier: 2)
+    PlayerCardChemistry.create(player_card: ray_lewis, chemistry: PHYSICAL_FRONT, tier: 1)
+  end
+
   PlayerCardChemistry.create(player_card: ray_lewis, chemistry: SECURE_TACKLER, tier: 1)
 end
 

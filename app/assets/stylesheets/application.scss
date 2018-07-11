@@ -51,7 +51,6 @@ $fira-sans:     'Fira Sans', Helvetica, sans-serif;
 .t-chemistry,
 .up-chemistry,
 .u-chemistry {
-
   color: $red-chemistry;
 }
 
@@ -119,15 +118,15 @@ body {
     border-bottom: none;
 
     &:hover {
-      border-color: $brown;
-      color: $light-green;
-      background-color: $dark-green;
-    }
-
-    &.active {
       color: $dark-grey;
       background-color: $light-grey;
       border-color: $dark-green;
+    }
+
+    &.active {
+      border-color: $brown;
+      color: $light-grey;
+      background-color: $dark-green;
     }
   }
 

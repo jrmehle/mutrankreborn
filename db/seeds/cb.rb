@@ -131,3 +131,70 @@ end
   PlayerCardChemistry.create(player_card: mel_blount, chemistry: chemistry, tier: 2)
   PlayerCardChemistry.create(player_card: mel_blount, chemistry: SECURE_TACKLER, tier: 1)
 end
+
+randy_moss = PlayerCard.create do |card|
+  card.first_name              = 'Randy'
+  card.last_name               = 'Moss'
+  card.overall                 = 99
+  card.team_chemistry_id       = Chemistry.by_team_city(:new_england).first.id
+  card.position                = Position::CORNERBACK
+  card.salary_cap_value        = 94
+  card.height_in_inches        = 76
+  card.weight_in_pounds        = 210
+  card.speed                   = 98
+  card.strength                = 64
+  card.agility                 = 95
+  card.acceleration            = 97
+  card.awareness               = 95
+  card.catching                = 94
+  card.jumping                 = 99
+  card.stamina                 = 95
+  card.injury                  = 95
+  card.trucking                = 60
+  card.elusiveness             = 90
+  card.ball_carrier_vision     = 93
+  card.stiff_arm               = 80
+  card.spin_move               = 91
+  card.juke_move               = 91
+  card.carrying                = 70
+  card.route_running           = 93
+  card.catch_in_traffic        = 89
+  card.spectacular_catch       = 95
+  card.release                 = 94
+  card.throw_power             = 50
+  card.throw_accuracy_short    = 20
+  card.throw_accuracy_mid      = 15
+  card.throw_accuracy_deep     = 10
+  card.throw_on_the_run        = 15
+  card.play_action             = 15
+  card.run_block               = 48
+  card.pass_block              = 38
+  card.impact_blocking         = 68
+  card.tackle                  = 75
+  card.hit_power               = 96
+  card.power_moves             = 58
+  card.finesse_moves           = 72
+  card.block_shedding          = 95
+  card.pursuit                 = 98
+  card.play_recognition        = 95
+  card.man_coverage            = 94
+  card.zone_coverage           = 98
+  card.press                   = 96
+  card.kick_power              = 20
+  card.kick_accuracy           = 15
+  card.kick_return             = 58
+  card.trait_clutch            = true
+  card.trait_high_motor        = false
+  card.trait_dl_swim_move      = false
+  card.trait_dl_spin_move      = false
+  card.trait_dl_bull_rush_move = false
+  card.trait_big_hitter        = false
+  card.trait_strips_ball       = false
+  card.trait_plays_ball_in_air = 'Balanced'
+  card.trait_penalty           = 'Normal'
+end
+
+PlayerCardChemistry.create(player_card: randy_moss, chemistry: TOUGHNESS, tier: 3)
+PlayerCardChemistry.create(player_card: randy_moss, chemistry: PHYSICAL_FRONT, tier: 1)
+PlayerCardChemistry.create(player_card: randy_moss, chemistry: SECURE_TACKLER, tier: 1)
+PlayerCardChemistry.create(player_card: randy_moss, chemistry: OUT_MY_WAY, tier: 1)

@@ -11,6 +11,13 @@
               - Position.styles(position_name_or_abbreviation: @player_card.position).each do |style|
                 = stat_list_item style_title(style), (1..20).to_a.sample, player_cards_path(position: @player_card.position, style: style)
 
+          .stat-group.chemistries
+            %h3 Chemistries
+            %ul.list-group.list-group-flush
+              - @player_card.player_card_chemistries.includes(:chemistry).where(chemistries: {display_position: 1}).each do |player_card_chemistry|
+                %li.list-group-item.d-flex.justify-content-between.align-items-center
+                  .small= player_card_chemistry.chemistry_name
+                  .small= display_chemistry_boosts player_card_chemistry.chemistry, player_card_chemistry.tier
         .col-10.col-sm-8
           .container
             .row
@@ -41,7 +48,7 @@
                     - Position.defensive_stats.each do |stat|
                       = stat_list_item stat.to_s.titleize, @player_card.attributes[stat.to_s]
 
-                .stat-group.special-teams-sats
+                .stat-group.special-teams-stats
                   %h3 Special Teams
                   %ul.list-group.list-group-flush
                     - Position.special_teams_stats.each do |stat|

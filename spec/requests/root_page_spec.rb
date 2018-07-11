@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe "root page", type: :request do
   let(:team_chemistry) do
-    Chemistry.create(name: Team.city_and_team_name(team_city_or_team_name: :minnesota))
+    Chemistry.create(name: :minnesota)
   end
   let!(:halfback) do
     PlayerCard.create(

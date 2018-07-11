@@ -1,5 +1,6 @@
 class Chemistry < ApplicationRecord
-  has_many :player_cards
+  has_many :player_card_chemistries
+  has_many :player_cards, through: :player_card_chemistries
 
   validates :name, presence: true
 
@@ -45,5 +46,9 @@ class Chemistry < ApplicationRecord
     else
       nil
     end
+  end
+
+  def boosts(tier: )
+    public_send("tier_#{ tier }_boosts") if (1..4).to_a.include? tier.to_i
   end
 end

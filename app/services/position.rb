@@ -225,7 +225,6 @@ class Position
     :cb => [
       :trait_clutch,
       :trait_high_motor,
-      :trait_linebacker_style,
       :trait_dl_swim_move,
       :trait_dl_spin_move,
       :trait_dl_bull_rush_move,

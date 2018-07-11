@@ -1,7 +1,7 @@
 module PlayerCardsHelper
   def inches_to_feet_and_inches(inches)
     feet_and_inches = inches.divmod(12)
-    "#{ feet_and_inches.first }' #{ feet_and_inches.last }\""
+    "#{ feet_and_inches.first }'#{ feet_and_inches.last }\""
   end
 
   def style_title(style)
@@ -12,24 +12,30 @@ module PlayerCardsHelper
   end
 
   def stat_table_header(stat, options = {})
-    td_class = case options[:td_class].class.name
-      when String then ['text-center', options[:td_class]].join(' ')
-      when Array then ['text-center'] + options[:td_class]
+    th_class = case options[:th_class].class.name
+      when 'String' then ['text-center', options[:th_class]].join(' ').strip
+      when 'Array' then ['text-center'] + options[:th_class]
+      else 'text-center'
     end
 
-    capture_haml do
-      haml_tag(:th, class: td_class, data: { abbrev: PlayerStat.stat_abbreviation(stat_name: stat) } ) do
-        haml_tag(:div, stat.to_s.titleize, class: 'text-center')
-      end
-    end
+    abbreviation = PlayerStat.stat_abbreviation(stat_name: stat)
+
+    render partial: 'stat_table_header', locals: { th_class: th_class, abbreviation: abbreviation, stat: stat }
   end
 
   def stat_list_item(stat, value, href = nil)
-    list_item_text = if stat == 'Height In Inches'
+    list_item_text = stat_list_item_text stat
+    badge_text     = stat_badge_text stat, value
+
+    render partial: 'stat_list_item', locals: { list_item_text: list_item_text, href: href, badge_text: badge_text }
+  end
+
+  def stat_list_item_text(stat)
+    if stat == 'Height In Inches'
       'Height'
     elsif stat == 'Weight In Pounds'
       'Weight'
-    elsif stat =~ /^trait_/
+    elsif stat =~ /^trait/
       if stat == :trait_dl_swim_move
         'Defensive Line Swim Move'
       elsif stat == :trait_dl_spin_move
@@ -42,15 +48,11 @@ module PlayerCardsHelper
     else
       stat
     end
+  end
 
-    if href
-      list_item_text = link_to(list_item_text, href).html_safe
-    end
-
-    badge_text = if stat == :height_in_inches
+  def stat_badge_text(stat, value)
+    if stat == 'Height In Inches'
       inches_to_feet_and_inches(value)
-    elsif stat == :weight_in_pounds
-      value.to_s
     elsif stat =~ /^trait_/
       if value.is_a?(String)
         value
@@ -60,12 +62,12 @@ module PlayerCardsHelper
     else
       value.to_s
     end
+  end
 
-    capture_haml do
-      haml_tag :li, class: 'list-group-item d-flex justify-content-between align-items-center' do
-        haml_concat(list_item_text)
-        haml_tag :span, badge_text, class: 'badge badge-pill'
-      end
-    end
+  def display_chemistry_boosts(chemistry, tier)
+    output = "Tier #{tier}: "
+    output << chemistry.boosts(tier: tier).collect { |stat, boost_amount|
+      "#{ PlayerStat.stat_abbreviation(stat_name: stat) } +#{ boost_amount }"
+    }.join(', ')
   end
 end

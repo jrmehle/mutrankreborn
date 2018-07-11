@@ -59,6 +59,14 @@ RSpec.configure do |config|
   # config.filter_gems_from_backtrace("gem name")
 
   config.include Capybara::DSL
+
+  # Includes the necessary Haml helper module
+  config.include Haml, type: :helper
+  config.include Haml::Helpers, type: :helper
+  config.before(:each, type: :helper) do |config|
+    # Sets up the helpers
+    init_haml_helpers
+  end
 end
 
 Shoulda::Matchers.configure do |config|
