@@ -16,8 +16,8 @@ RSpec.describe "root page", type: :request do
   it "displays all of the positions" do
     visit "/"
     expect(page).to have_selector('ul.mutposition', count: 19)
-    Position.names.each do |position_name|
-      expect(page).to have_text position_name
+    Position.abbreviations.each do |position_name|
+      expect(page).to have_text position_name.upcase
     end
 
     within "#hb" do

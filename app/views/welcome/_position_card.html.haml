@@ -1,0 +1,7 @@
+.col-md2{ class: "position-#{position}" }
+  .card
+    %h3{ title: Position.name_from_abbreviation(abbreviation: position) }
+      = position.upcase
+    %ul.list-unstyled.mutposition{ id: position }
+      - Position.styles(position_name_or_abbreviation: position).each do |style|
+        %li= link_to style_title(style), player_cards_path(position: position, style: style)

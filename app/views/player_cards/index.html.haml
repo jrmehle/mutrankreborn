@@ -26,7 +26,7 @@
                   = index +1
                 %td
                   = link_to card.full_name, card
-                %td.text-center
+                %td.text-center{ class: rating_class(card.overall) }
                   = card.overall
                 = render ['player_cards', 'cells', params[:position], params[:style]].join('/'), card: card if params[:position] && params[:style]
 

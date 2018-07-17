@@ -322,34 +322,6 @@ class Position
     POSITIONS.key(position_name)
   end
 
-  def self.positions_by_side_of_ball
-    {
-      offense: [
-        HALFBACK,
-        WIDE_RECEIVER,
-        QUARTERBACK,
-        TIGHT_END,
-        LEFT_TACKLE,
-        LEFT_GUARD,
-        CENTER,
-        RIGHT_GUARD,
-        RIGHT_TACKLE,
-        FULLBACK
-      ],
-      defense: [
-        FREE_SAFETY,
-        STRONG_SAFETY,
-        RIGHT_OUTSIDE_LINEBACKER,
-        MIDDLE_LINEBACKER,
-        LEFT_OUTSIDE_LINEBACKER,
-        LEFT_END,
-        RIGHT_END,
-        DEFENSIVE_TACKLE,
-        CORNERBACK
-      ]
-    }
-  end
-
   def self.general_stats
     GENERAL_STATS
   end
