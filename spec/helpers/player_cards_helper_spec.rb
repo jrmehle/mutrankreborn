@@ -135,4 +135,34 @@ RSpec.describe PlayerCardsHelper, type: :helper do
         .to eq('Tier 1: SPM +1, CIT +1, TAS +1')
     end
   end
+
+  describe ".rating_class" do
+    it "returns a rating class for 99 only" do
+      expect(helper.rating_class(99)).to eq('rating-99')
+    end
+
+    it "returns a rating-90s for 90-98" do
+      (90..98).to_a.each do |rating|
+        expect(helper.rating_class(rating)).to eq('rating-90s')
+      end
+    end
+
+    it "returns a rating-80s for 80-89" do
+      (80..89).to_a.each do |rating|
+        expect(helper.rating_class(rating)).to eq('rating-80s')
+      end
+    end
+
+    it "returns a rating-90s for 90-98" do
+      (70..79).to_a.each do |rating|
+        expect(helper.rating_class(rating)).to eq('rating-70s')
+      end
+    end
+
+    it "returns a rating-90s for 90-98" do
+      (1..69).to_a.each do |rating|
+        expect(helper.rating_class(rating)).to eq('rating-sub70s')
+      end
+    end
+  end
 end

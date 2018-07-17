@@ -70,4 +70,18 @@ module PlayerCardsHelper
       "#{ PlayerStat.stat_abbreviation(stat_name: stat) } +#{ boost_amount }"
     }.join(', ')
   end
+
+  def rating_class(stat)
+    if stat >= 99
+      'rating-99'
+    elsif stat >= 90
+      'rating-90s'
+    elsif stat >= 80
+      'rating-80s'
+    elsif stat >= 70
+      'rating-70s'
+    else
+      'rating-sub70s'
+    end
+  end
 end

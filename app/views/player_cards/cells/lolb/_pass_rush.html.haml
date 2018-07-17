@@ -1,7 +1,7 @@
-%td.text-center= card.power_moves
-%td.text-center= card.finesse_moves
-%td.text-center= card.strength
-%td.text-center= card.speed
-%td.text-center= card.acceleration
-%td.text-center= card.agility
-%td.text-center= card.awareness
+%td.text-center{ class: rating_class(card.power_moves) }= card.power_moves
+%td.text-center{ class: rating_class(card.finesse_moves) }= card.finesse_moves
+%td.text-center{ class: rating_class(card.strength) }= card.strength
+%td.text-center{ class: rating_class(card.speed) }= card.speed
+%td.text-center{ class: rating_class(card.acceleration) }= card.acceleration
+%td.text-center{ class: rating_class(card.agility) }= card.agility
+%td.text-center{ class: rating_class(card.awareness) }= card.awareness

@@ -1,4 +1,6 @@
 @import "bootstrap";
+@import url(https://fonts.googleapis.com/css?family=Fira+Sans:700|Lato:300,300italic,700|Titillium+Web);
+
 
 $light-grey:  #D1D5DE;
 $dark-grey:   #545359;
@@ -17,6 +19,7 @@ $red-chemistry: #A60202;
 
 $titillium-web: 'Titillium Web', Arial, sans-serif;
 $fira-sans:     'Fira Sans', Helvetica, sans-serif;
+$lato:          'Lato', Helvetica, sans-serif;
 
 .ptr-chemistry { color: $pound-the-rock; }
 .mts-chemistry { color: $move-the-sticks; }
@@ -54,6 +57,14 @@ $fira-sans:     'Fira Sans', Helvetica, sans-serif;
   color: $red-chemistry;
 }
 
+h1,h2,h3,h4,h5,h6,th {
+  font-family: $lato;
+  font-weight: 700;
+}
+p,a,li,blockquote,td {
+  font-family: $lato;
+  font-weight: 400;
+}
 
 body {
   background: url(asset-path('football-field-blur.jpg')) no-repeat center center fixed;
@@ -65,7 +76,7 @@ body {
 }
 
 #header h1 a {
-  font-family: $titillium-web;
+  font-weight: 600;
   color: $light-grey;
   text-shadow: $dark-grey 1px 1px 1px;
 
@@ -77,17 +88,74 @@ body {
 
 #main-content {
   padding: 3rem 0;
-
-  h3 {
-    font-weight: bold;
-    font-family: $titillium-web;
-    letter-spacing: 0.1rem;
-  }
 }
 
 #welcome {
+  .container-fluid {
+    margin-bottom: 20px;
+  }
+
+  h2 {
+    color: $light-grey;
+    border-bottom: 1px solid $light-grey;
+  }
+
+  .position-lt, .position-rt {
+    padding-top: 30px;
+  }
+
+  .position-lg, .position-rg {
+    padding-top: 20px;
+  }
+
+  .position-te {
+    padding-top: 40px;
+  }
+
+  .position-hb {
+    padding-top: 50px;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .position-qb {
+    padding-top: 10px;
+  }
+
+  .position-fb {
+    padding-top: 30px;
+  }
+
+  .position-mlb {
+    padding-top: 20px;
+  }
+
+  .position-fs {
+    padding-right: 20px;
+  }
+
+  .position-rolb, .position-lolb, .position-ss {
+    padding-top: 40px;
+  }
+
+  .position-lolb {
+    padding-left: 20px;
+  }
+
+  .position-ss {
+    padding-left: 40px;
+  }
+
+  .position-cb {
+    padding-top: 20px;
+    padding-right: 40px;
+  }
+
   .card {
-    padding-left: 0.5rem;
+    width: 188px;
+    height: 260px;
+    padding-left: 0.75rem;
+    margin-left: 0.5rem;
     margin-bottom: 2.5rem;
     background-color: rgba(240,240,240,0.80);
 
@@ -98,6 +166,7 @@ body {
       -moz-border-radius: 5px;
       border-radius: 5px;
       color: $dark-grey;
+      font-family: $fira-sans;
 
       &:hover {
         color: $light-green;
@@ -130,14 +199,41 @@ body {
     }
   }
 
+  .rating-99 {
+    color: #0F6120;
+  }
+
+  .rating-90s {
+    color: #288046;
+  }
+
+  .rating-80s {
+    color: #39ad61;
+  }
+
+  .rating-70s {
+    color: #bdb76b;
+  }
+
+  .rating-sub70s {
+    color: brown;
+  }
+
   thead {
     color: $light-grey;
     background-color: $dark-green;
   }
 
+  td {
+    font-weight: 400;
+    font-family: $fira-sans;
+    text-shadow: 1px 1px 1px rgba(0,0,0,0.25);
+  }
+
   tbody td a {
     color: $dark-grey;
     display: block;
+    font-family: $fira-sans;
 
     &:hover {
       text-decoration: none;
@@ -257,6 +353,7 @@ body {
       list-style-type: none;
       line-height: 1.25rem;
       letter-spacing: -1px;
+      font-weight: 900;
     }
   }
 

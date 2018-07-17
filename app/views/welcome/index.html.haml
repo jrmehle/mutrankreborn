@@ -1,10 +1,18 @@
-#welcome.container-fluid
-  .row
-    - @positions.each do |position_group_name, position_group|
-      .col
-        - position_group.each do |position|
-          .card.shadow{ data: { position: position } }
-            %h3= Position.name_from_abbreviation(abbreviation: position)
-            %ul.list-unstyled.mutposition{ id: position }
-              - Position.styles(position_name_or_abbreviation: position).each do |style|
-                %li= link_to style_title(style), player_cards_path(position: position, style: style)
+#welcome
+  .container-fluid
+    %h2 Offense
+    .row.justify-content-center
+      - %w{ lt lg c rg rt te }.each do |position|
+        = render partial: 'position_card', locals: { position: position }
+    .row.justify-content-center
+      - %w{ wr hb qb fb }.each do |position|
+        = render partial: 'position_card', locals: { position: position }
+
+  .container-fluid
+    %h2 Defense
+    .row.justify-content-center
+      - %w{ fs rolb mlb lolb ss }.each do |position|
+        = render partial: 'position_card', locals: { position: position }
+    .row.justify-content-center
+      - %w{ cb re dt le }.each do |position|
+        = render partial: 'position_card', locals: { position: position }
