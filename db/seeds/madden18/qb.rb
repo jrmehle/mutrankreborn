@@ -3,6 +3,7 @@ tom_brady = PlayerCard.create do |card|
   card.last_name                 = 'Brady'
   card.overall                   = 98
   card.team_chemistry_id         = Chemistry.by_team_city(:new_england).first.id
+  card.program                   = NFL_HONORS
   card.position                  = Position::QUARTERBACK
   card.height_in_inches          = 76
   card.weight_in_pounds          = 225
@@ -65,6 +66,7 @@ PlayerCardChemistry.create(player_card: tom_brady, chemistry: CONDUCTOR, tier: 1
     card.last_name                 = 'Vick'
     card.overall                   = 97
     card.team_chemistry_id         = Chemistry.by_team_city(:atlanta).first.id
+    card.program                   = ULTIMATE_LEGENDS
     card.position                  = Position::QUARTERBACK
     card.height_in_inches          = 72
     card.weight_in_pounds          = 215

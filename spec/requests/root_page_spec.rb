@@ -4,13 +4,17 @@ RSpec.describe "root page", type: :request do
   let(:team_chemistry) do
     Chemistry.create(name: :minnesota)
   end
+  let(:program) do
+    Program.create(name: 'Snow Beasts', abbreviation: 'SB')
+  end
   let!(:halfback) do
     PlayerCard.create(
       position: Position::HALFBACK,
       first_name: 'Bo',
       last_name: 'Jackson',
       overall: 96,
-      team_chemistry_id: team_chemistry.id)
+      team_chemistry_id: team_chemistry.id,
+      program_id: program.id)
   end
 
   it "displays all of the positions" do

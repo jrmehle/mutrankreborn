@@ -3,6 +3,7 @@ richie_incognito = PlayerCard.create do |card|
   card.last_name            = 'Incognito'
   card.overall              = 98
   card.team_chemistry_id    = Chemistry.by_team_city(:dallas).first.id
+  card.program              = POSITION_HEROES
   card.position             = Position::LEFT_GUARD
   card.salary_cap_value     = 71
   card.height_in_inches     = 75
@@ -62,6 +63,7 @@ PlayerCardChemistry.create(player_card: richie_incognito, chemistry: SECURE_PASS
     card.last_name            = 'McDaniel'
     card.overall              = 98
     card.team_chemistry_id    = Chemistry.by_team_city(:minnesota).first.id
+    card.program              = ULTIMATE_LEGENDS
     card.position             = Position::LEFT_GUARD
     card.salary_cap_value     = 70
     card.height_in_inches     = 75

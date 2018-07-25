@@ -5,7 +5,7 @@ class CreatePlayerCards < ActiveRecord::Migration[5.1]
       t.string :last_name
       t.string :position, index: true
       t.uuid :team_chemistry_id, index: true
-      t.uuid :promotion_id, index: true
+      t.uuid :program_id, index: true
       t.integer :salary_cap_value, default: 0
       t.integer :overall, default: 0
       t.integer :height_in_inches, default: 0

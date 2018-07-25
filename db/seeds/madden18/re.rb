@@ -4,6 +4,7 @@
     card.last_name               = 'Taylor'
     card.overall                 = 97
     card.team_chemistry_id       = Chemistry.by_team_city(:miami).first.id
+    card.program                 = ULTIMATE_LEGENDS
     card.position                = Position::RIGHT_END
     card.salary_cap_value        = 60
     card.height_in_inches        = 78
@@ -67,6 +68,7 @@ william_hayes = PlayerCard.create do |card|
   card.last_name               = 'Hayes'
   card.overall                 = 89
   card.team_chemistry_id       = Chemistry.by_team_city(:los_angeles).first.id
+  card.program                 = NFL_REPLAYS
   card.position                = Position::RIGHT_END
   card.salary_cap_value        = 35
   card.height_in_inches        = 75

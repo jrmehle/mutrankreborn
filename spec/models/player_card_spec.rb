@@ -4,17 +4,22 @@ RSpec.describe PlayerCard, type: :model do
   let(:team_chemistry) do
     Chemistry.create(name: Team.city_and_team_name(team_city_or_team_name: :minnesota))
   end
+  let(:program) do
+    Program.create(name: 'Core')
+  end
   subject do
     described_class.new(
       first_name: 'John',
       last_name: 'Madden',
       position: 'qb',
       overall: 99,
-      team_chemistry_id: team_chemistry.id)
+      team_chemistry_id: team_chemistry.id,
+      program_id: program.id)
   end
 
   # Associations
   it { is_expected.to belong_to :team_chemistry }
+  it { is_expected.to belong_to :program }
   it { is_expected.to have_many :player_card_chemistries }
   it { is_expected.to have_many :chemistries }
 

@@ -3,6 +3,7 @@ james_develin = PlayerCard.create do |card|
   card.last_name                      = 'Develin'
   card.overall                        = 94
   card.team_chemistry_id              = Chemistry.by_team_city(:new_england).first.id
+  card.program                        = TEAM_OF_THE_YEAR
   card.position                       = Position::FULLBACK
   card.salary_cap_value               = 47
   card.height_in_inches               = 75
@@ -71,6 +72,7 @@ PlayerCardChemistry.create(player_card: james_develin, chemistry: IDENTIFIED, ti
     card.last_name                      = 'Okoye'
     card.overall                        = 98
     card.team_chemistry_id              = Chemistry.by_team_city(:kansas_city).first.id
+    card.program                        = ULTIMATE_LEGENDS
     card.position                       = Position::FULLBACK
     card.salary_cap_value               = 71
     card.height_in_inches               = 73

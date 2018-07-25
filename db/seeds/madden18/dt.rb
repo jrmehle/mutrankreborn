@@ -3,6 +3,7 @@ malik_jackson = PlayerCard.create do |card|
   card.last_name               = 'Jackson'
   card.overall                 = 98
   card.team_chemistry_id       = Chemistry.by_team_city(:jacksonville).first.id
+  card.program                 = POSITION_HEROES
   card.position                = Position::DEFENSIVE_TACKLE
   card.salary_cap_value        = 62
   card.height_in_inches        = 77
@@ -67,6 +68,7 @@ PlayerCardChemistry.create(player_card: malik_jackson, chemistry: SECURE_TACKLER
     card.last_name               = 'Williams'
     card.overall                 = 98
     card.team_chemistry_id       = Chemistry.by_team_city(:minnesota).first.id
+    card.program                 = ULTIMATE_LEGENDS
     card.position                = Position::DEFENSIVE_TACKLE
     card.salary_cap_value        = 63
     card.height_in_inches        = 77
