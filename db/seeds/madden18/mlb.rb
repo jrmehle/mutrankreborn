@@ -4,6 +4,7 @@
     card.last_name               = 'Lewis'
     card.overall                 = 99
     card.team_chemistry_id       = Chemistry.by_team_city(:baltimore).first.id
+    card.program                 = ULTIMATE_LEGENDS
     card.position                = Position::MIDDLE_LINEBACKER
     card.salary_cap_value        = 67
     card.height_in_inches        = 73
@@ -77,6 +78,7 @@ donta_hightower = PlayerCard.create do |card|
   card.last_name               = 'Hightower'
   card.overall                 = 96
   card.team_chemistry_id       = Chemistry.by_team_city(:new_england).first.id
+  card.program                 = BOSS_BATTLES
   card.position                = Position::MIDDLE_LINEBACKER
   card.salary_cap_value        = 50
   card.height_in_inches        = 75

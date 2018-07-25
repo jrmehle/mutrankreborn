@@ -155,7 +155,7 @@ RSpec.describe Position do
   describe ".traits" do
     it "returns the player traits by position" do
       expect(described_class.traits).to eq({
-        :qb => [
+        qb: [
           :trait_quarterback_style,
           :trait_throws_tight_spiral,
           :trait_senses_pressure,
@@ -164,7 +164,7 @@ RSpec.describe Position do
           :trait_clutch,
           :trait_penalty
         ],
-        :hb => [
+        hb: [
           :trait_clutch,
           :trait_covers_ball,
           :trait_fights_for_extra_yards,
@@ -176,7 +176,7 @@ RSpec.describe Position do
           :trait_high_motor,
           :trait_penalty
         ],
-        :wr => [
+        wr: [
           :trait_clutch,
           :trait_covers_ball,
           :trait_fights_for_extra_yards,
@@ -188,7 +188,7 @@ RSpec.describe Position do
           :trait_high_motor,
           :trait_penalty
         ],
-        :fb => [
+        fb: [
           :trait_clutch,
           :trait_covers_ball,
           :trait_fights_for_extra_yards,
@@ -200,7 +200,7 @@ RSpec.describe Position do
           :trait_high_motor,
           :trait_penalty
         ],
-        :te => [
+        te: [
           :trait_clutch,
           :trait_covers_ball,
           :trait_fights_for_extra_yards,
@@ -213,27 +213,27 @@ RSpec.describe Position do
           :trait_drops_open_passes,
           :trait_penalty
         ],
-        :rt => [
+        rt: [
           :trait_high_motor,
           :trait_penalty
         ],
-        :rg => [
+        rg: [
           :trait_high_motor,
           :trait_penalty
         ],
-        :c => [
+        c: [
           :trait_high_motor,
           :trait_penalty
         ],
-        :lg => [
+        lg: [
           :trait_high_motor,
           :trait_penalty
         ],
-        :lt => [
+        lt: [
           :trait_high_motor,
           :trait_penalty
         ],
-        :fs => [
+        fs: [
           :trait_clutch,
           :trait_high_motor,
           :trait_linebacker_style,
@@ -245,7 +245,7 @@ RSpec.describe Position do
           :trait_plays_ball_in_air,
           :trait_penalty
         ],
-        :ss => [
+        ss: [
           :trait_clutch,
           :trait_high_motor,
           :trait_linebacker_style,
@@ -257,7 +257,7 @@ RSpec.describe Position do
           :trait_plays_ball_in_air,
           :trait_penalty
         ],
-        :cb => [
+        cb: [
           :trait_clutch,
           :trait_high_motor,
           :trait_dl_swim_move,
@@ -268,19 +268,7 @@ RSpec.describe Position do
           :trait_plays_ball_in_air,
           :trait_penalty
         ],
-        :rolb => [
-          :trait_clutch,
-          :trait_high_motor,
-          :trait_linebacker_style,
-          :trait_dl_swim_move,
-          :trait_dl_spin_move,
-          :trait_dl_bull_rush_move,
-          :trait_big_hitter,
-          :trait_strips_ball,
-          :trait_plays_ball_in_air,
-          :trait_penalty
-        ],
-        :mlb => [
+        rolb: [
           :trait_clutch,
           :trait_high_motor,
           :trait_linebacker_style,
@@ -292,7 +280,7 @@ RSpec.describe Position do
           :trait_plays_ball_in_air,
           :trait_penalty
         ],
-        :lolb => [
+        mlb: [
           :trait_clutch,
           :trait_high_motor,
           :trait_linebacker_style,
@@ -304,7 +292,19 @@ RSpec.describe Position do
           :trait_plays_ball_in_air,
           :trait_penalty
         ],
-        :le => [
+        lolb: [
+          :trait_clutch,
+          :trait_high_motor,
+          :trait_linebacker_style,
+          :trait_dl_swim_move,
+          :trait_dl_spin_move,
+          :trait_dl_bull_rush_move,
+          :trait_big_hitter,
+          :trait_strips_ball,
+          :trait_plays_ball_in_air,
+          :trait_penalty
+        ],
+        le: [
           :trait_high_motor,
           :trait_dl_swim_move,
           :trait_dl_spin_move,
@@ -313,7 +313,7 @@ RSpec.describe Position do
           :trait_strips_ball,
           :trait_penalty
         ],
-        :re => [
+        re: [
           :trait_high_motor,
           :trait_dl_swim_move,
           :trait_dl_spin_move,
@@ -322,7 +322,7 @@ RSpec.describe Position do
           :trait_strips_ball,
           :trait_penalty
         ],
-        :dt => [
+        dt: [
           :trait_high_motor,
           :trait_dl_swim_move,
           :trait_dl_spin_move,

@@ -1,6 +1,7 @@
 .mut-card{ style: "background-image: url('/assets/card-placeholder.jpg');" }
   .salary-cap-value SC#{ player_card.salary_cap_value }
   %h2.name.strong= player_card.full_name
+  %h4.program= player_card.program_name
   .info-bar
     .overall= player_card.overall
     .position.small= player_card.position.upcase

@@ -4,6 +4,7 @@
     card.last_name               = 'McGinest'
     card.overall                 = 98
     card.team_chemistry_id       = Chemistry.by_team_city(:new_england).first.id
+    card.program                 = ULTIMATE_LEGENDS
     card.position                = Position::LEFT_OUTSIDE_LINEBACKER
     card.salary_cap_value        = 62
     card.height_in_inches        = 77
@@ -70,6 +71,7 @@ rickey_jackson = PlayerCard.create do |card|
   card.last_name               = 'Jackson'
   card.overall                 = 99
   card.team_chemistry_id       = Chemistry.by_team_city(:new_orleans).first.id
+  card.program                 = BOSS_BATTLES
   card.position                = Position::LEFT_OUTSIDE_LINEBACKER
   card.salary_cap_value        = 63
   card.height_in_inches        = 75

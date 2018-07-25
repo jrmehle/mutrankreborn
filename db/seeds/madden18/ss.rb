@@ -4,6 +4,7 @@
     card.last_name               = 'Reed'
     card.overall                 = 98
     card.team_chemistry_id       = Chemistry.by_team_city(:baltimore).first.id
+    card.program                 = ULTIMATE_LEGENDS
     card.position                = Position::STRONG_SAFETY
     card.salary_cap_value        = 72
     card.height_in_inches        = 71
@@ -71,6 +72,7 @@ paul_krause = PlayerCard.create do |card|
   card.last_name               = 'Krause'
   card.overall                 = 90
   card.team_chemistry_id       = Chemistry.by_team_city(:minnesota).first.id
+  card.program                 = LEGENDS
   card.position                = Position::STRONG_SAFETY
   card.salary_cap_value        = 39
   card.height_in_inches        = 75

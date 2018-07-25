@@ -4,6 +4,7 @@
     card.last_name               = 'Taylor'
     card.overall                 = 97
     card.team_chemistry_id       = Chemistry.by_team_city(:washington).first.id
+    card.program                 = MASTER
     card.position                = Position::FREE_SAFETY
     card.salary_cap_value        = 74
     card.height_in_inches        = 74
@@ -72,6 +73,7 @@ end
     card.last_name               = 'Dawkins'
     card.overall                 = 98
     card.team_chemistry_id       = Chemistry.by_team_city(:philadelphia).first.id
+    card.program                 = ULTIMATE_LEGENDS
     card.position                = Position::FREE_SAFETY
     card.salary_cap_value        = 75
     card.height_in_inches        = 72

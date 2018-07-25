@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_06_03_171101) do
+ActiveRecord::Schema.define(version: 2018_07_18_012214) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "pgcrypto"
@@ -53,7 +53,7 @@ ActiveRecord::Schema.define(version: 2018_06_03_171101) do
     t.string "last_name"
     t.string "position"
     t.uuid "team_chemistry_id"
-    t.uuid "promotion_id"
+    t.uuid "program_id"
     t.integer "salary_cap_value", default: 0
     t.integer "overall", default: 0
     t.integer "height_in_inches", default: 0
@@ -127,8 +127,20 @@ ActiveRecord::Schema.define(version: 2018_06_03_171101) do
     t.datetime "updated_at", null: false
     t.index ["game_version"], name: "index_player_cards_on_game_version"
     t.index ["position"], name: "index_player_cards_on_position"
-    t.index ["promotion_id"], name: "index_player_cards_on_promotion_id"
+    t.index ["program_id"], name: "index_player_cards_on_program_id"
     t.index ["team_chemistry_id"], name: "index_player_cards_on_team_chemistry_id"
+  end
+
+  create_table "programs", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
+    t.string "name"
+    t.string "abbreviation"
+    t.text "description"
+    t.date "start_date"
+    t.date "end_date"
+    t.string "game_version"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["game_version"], name: "index_programs_on_game_version"
   end
 
 end

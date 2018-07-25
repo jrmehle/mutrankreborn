@@ -4,13 +4,17 @@ RSpec.describe "player show page", type: :request do
   let(:team_chemistry) do
     Chemistry.create(name: :minnesota)
   end
+  let(:program) do
+    Program.create(name: 'Snow Beasts')
+  end
   let!(:card) do
     PlayerCard.create(
       position: Position::HALFBACK,
       first_name: 'Bo',
       last_name: 'Jackson',
       overall: 96,
-      team_chemistry_id: team_chemistry.id)
+      team_chemistry_id: team_chemistry.id,
+      program_id: program.id)
   end
 
   before { visit '/players/' + card.id }

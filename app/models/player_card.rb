@@ -2,8 +2,10 @@ class PlayerCard < ApplicationRecord
   attr_accessor :score, :style
 
   belongs_to :team_chemistry, class_name: 'Chemistry', foreign_key: :team_chemistry_id
+  belongs_to :program
   has_many :player_card_chemistries
   has_many :chemistries, through: :player_card_chemistries
+
 
   validates :game_version, presence: true
   validates :first_name, presence: true
@@ -28,6 +30,7 @@ class PlayerCard < ApplicationRecord
   before_validation :set_default_game_version, on: :create
 
   delegate :name, :abbreviation, to: :team_chemistry, prefix: true
+  delegate :name, :abbreviation, to: :program, prefix: true
 
   def full_name
     [first_name, last_name].join(' ').strip

@@ -301,8 +301,18 @@ body {
   .name {
     position: absolute;
     left: 4px;
-    bottom: 4px;
+    bottom: 1.75rem;
     font-size: 1.667rem;
+    padding-right: 3.2rem;
+    margin-bottom: 0;
+    font-weight: bold;
+  }
+
+  .program {
+    position: absolute;
+    left: 4px;
+    bottom: 4px;
+    font-size: 1.15rem;
     padding-right: 2.4rem;
     margin-bottom: 0;
     font-weight: bold;

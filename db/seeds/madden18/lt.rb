@@ -4,6 +4,7 @@
     card.last_name             = 'Munoz'
     card.overall               = 97
     card.team_chemistry_id     = Chemistry.by_team_city(:cincinnati).first.id
+    card.program               = ULTIMATE_LEGENDS
     card.position              = Position::LEFT_TACKLE
     card.salary_cap_value      = 64
     card.height_in_inches      = 78
@@ -62,6 +63,7 @@ joe_thomas = PlayerCard.create do |card|
   card.last_name             = 'Thomas'
   card.overall               = 99
   card.team_chemistry_id     = Chemistry.by_team_city(:cleveland).first.id
+  card.program               = ULTIMATE_LEGENDS
   card.position              = Position::LEFT_TACKLE
   card.salary_cap_value      = 71
   card.height_in_inches      = 78

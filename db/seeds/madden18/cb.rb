@@ -4,6 +4,7 @@
     card.last_name               = 'Lane'
     card.overall                 = 99
     card.team_chemistry_id       = Chemistry.by_team_city(:detroit).first.id
+    card.program                 = MASTER
     card.position                = Position::CORNERBACK
     card.salary_cap_value        = 84
     card.height_in_inches        = 73
@@ -72,6 +73,7 @@ end
     card.last_name               = 'Blount'
     card.overall                 = 97
     card.team_chemistry_id       = Chemistry.by_team_city(:pittsburgh).first.id
+    card.program                 = ULTIMATE_LEGENDS
     card.position                = Position::CORNERBACK
     card.salary_cap_value        = 72
     card.height_in_inches        = 75
@@ -137,6 +139,7 @@ randy_moss = PlayerCard.create do |card|
   card.last_name               = 'Moss'
   card.overall                 = 99
   card.team_chemistry_id       = Chemistry.by_team_city(:new_england).first.id
+  card.program                 = GOLDEN_TICKETS
   card.position                = Position::CORNERBACK
   card.salary_cap_value        = 94
   card.height_in_inches        = 76
