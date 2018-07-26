@@ -8,7 +8,7 @@
           .stat-group.ranks
             %h3 Ranks
             %ul.list-group.list-group-flush
-              - Position.styles(position_name_or_abbreviation: @player_card.position).each do |style|
+              - Object.const_get("#{ current_game_version }::Position").styles(position_name_or_abbreviation: @player_card.position).each do |style|
                 = stat_list_item style_title(style), (1..20).to_a.sample, player_cards_path(position: @player_card.position, style: style)
 
           .stat-group.chemistries
@@ -25,31 +25,31 @@
                 .stat-group.generic-stats
                   %h3 General
                   %ul.list-group.list-group-flush
-                    - Position.general_stats.each do |stat|
+                    - Object.const_get("#{ current_game_version }::Position").general_stats.each do |stat|
                       = stat_list_item stat.to_s.titleize, @player_card.attributes[stat.to_s]
 
                 .stat-group.traits
                   %h3 Traits
                   %ul.list-group.list-group-flush
-                    - Position.traits[@player_card.position.to_sym].each do |trait|
+                    - Object.const_get("#{ current_game_version }::Position").traits[@player_card.position.to_sym].each do |trait|
                       = stat_list_item trait, @player_card.attributes[trait.to_s]
 
               .col-4
                 .stat-group.offensive-stats
                   %h3 Offense
                   %ul.list-group.list-group-flush
-                    - Position.offensive_stats.each do |stat|
+                    - Object.const_get("#{ current_game_version }::Position").offensive_stats.each do |stat|
                       = stat_list_item stat.to_s.titleize, @player_card.attributes[stat.to_s]
 
               .col-4
                 .stat-group.defensive-stats
                   %h3 Defense
                   %ul.list-group.list-group-flush
-                    - Position.defensive_stats.each do |stat|
+                    - Object.const_get("#{ current_game_version }::Position").defensive_stats.each do |stat|
                       = stat_list_item stat.to_s.titleize, @player_card.attributes[stat.to_s]
 
                 .stat-group.special-teams-stats
                   %h3 Special Teams
                   %ul.list-group.list-group-flush
-                    - Position.special_teams_stats.each do |stat|
+                    - Object.const_get("#{ current_game_version }::Position").special_teams_stats.each do |stat|
                       = stat_list_item stat.to_s.titleize, @player_card.attributes[stat.to_s]

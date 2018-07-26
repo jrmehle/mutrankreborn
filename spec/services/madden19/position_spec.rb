@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe Position do
+RSpec.describe Madden19::Position do
   describe ".names" do
     it "returns an array of position names" do
       expect(described_class.names.size).to eq(19)

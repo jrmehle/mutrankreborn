@@ -22,6 +22,7 @@ module Mutreborn
       g.orm :active_record, primary_key_type: :uuid
     end
 
+    config.autoload_paths << "#{Rails.root}/app/services"
     config.autoload_paths << "#{Rails.root}/app/rankers"
     config.autoload_paths << "#{Rails.root}/app/scorers"
   end

@@ -1,10 +1,10 @@
 #player-cards.container-fluid
   .card
     .card-header
-      %h2= Position.name_from_abbreviation(abbreviation: params[:position])
+      %h2= Object.const_get("#{ Mutreborn::Application::DEFAULT_GAME_VERSION.camelize }::Position").name_from_abbreviation(abbreviation: params[:position])
     .card-body
       %ul.nav.nav-tabs.nav-fill{ role: 'navigation' }
-        - Position.styles(position_name_or_abbreviation: params[:position]).each do |style|
+        - Object.const_get("#{ Mutreborn::Application::DEFAULT_GAME_VERSION.camelize }::Position").styles(position_name_or_abbreviation: params[:position]).each do |style|
           %li.nav-item= link_to style_title(style), player_cards_path(position: params[:position], style: style), class: ['nav-link', ('active' if style == params[:style])]
 
       .table-responsive

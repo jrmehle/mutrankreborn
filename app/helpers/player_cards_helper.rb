@@ -18,7 +18,7 @@ module PlayerCardsHelper
       else 'text-center'
     end
 
-    abbreviation = PlayerStat.stat_abbreviation(stat_name: stat)
+    abbreviation = Object.const_get("#{ current_game_version }::PlayerStat").stat_abbreviation(stat_name: stat)
 
     render partial: 'stat_table_header', locals: { th_class: th_class, abbreviation: abbreviation, stat: stat }
   end
@@ -67,7 +67,7 @@ module PlayerCardsHelper
   def display_chemistry_boosts(chemistry, tier)
     output = "Tier #{tier}: "
     output << chemistry.boosts(tier: tier).collect { |stat, boost_amount|
-      "#{ PlayerStat.stat_abbreviation(stat_name: stat) } +#{ boost_amount }"
+      "#{ Object.const_get("#{ Mutreborn::Application::DEFAULT_GAME_VERSION.camelize }::PlayerStat").stat_abbreviation(stat_name: stat) } +#{ boost_amount }"
     }.join(', ')
   end
 

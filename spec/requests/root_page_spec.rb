@@ -9,7 +9,7 @@ RSpec.describe "root page", type: :request do
   end
   let!(:halfback) do
     PlayerCard.create(
-      position: Position::HALFBACK,
+      position: Object.const_get("#{ Mutreborn::Application::DEFAULT_GAME_VERSION.camelize }::Position")::HALFBACK,
       first_name: 'Bo',
       last_name: 'Jackson',
       overall: 96,
@@ -20,7 +20,7 @@ RSpec.describe "root page", type: :request do
   it "displays all of the positions" do
     visit "/"
     expect(page).to have_selector('ul.mutposition', count: 19)
-    Position.abbreviations.each do |position_name|
+    Object.const_get("#{ Mutreborn::Application::DEFAULT_GAME_VERSION.camelize }::Position").abbreviations.each do |position_name|
       expect(page).to have_text position_name.upcase
     end
 

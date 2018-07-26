@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe Team do
+RSpec.describe Madden18::Team do
   describe ".city_and_team_name" do
     it 'returns the city and team name when given the city name' do
       expect(described_class.city_and_team_name(team_city_or_team_name: :arizona))

@@ -9,7 +9,7 @@ RSpec.describe "player show page", type: :request do
   end
   let!(:card) do
     PlayerCard.create(
-      position: Position::HALFBACK,
+      position: Object.const_get("#{ Mutreborn::Application::DEFAULT_GAME_VERSION.camelize }::Position::HALFBACK"),
       first_name: 'Bo',
       last_name: 'Jackson',
       overall: 96,

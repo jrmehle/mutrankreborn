@@ -14,48 +14,52 @@ class PlayerCardScorer
 
   def positional_scorer
     @klass ||= case @position
-               when Position::HALFBACK
+               when position_class::HALFBACK
                  @game_version::HalfbackScorer
-               when Position::WIDE_RECEIVER
+               when position_class::WIDE_RECEIVER
                  @game_version::WideReceiverScorer
-               when Position::QUARTERBACK
+               when position_class::QUARTERBACK
                  @game_version::QuarterbackScorer
-               when Position::TIGHT_END
+               when position_class::TIGHT_END
                  @game_version::TightEndScorer
-               when Position::LEFT_TACKLE
+               when position_class::LEFT_TACKLE
                  @game_version::LeftTackleScorer
-               when Position::LEFT_GUARD
+               when position_class::LEFT_GUARD
                  @game_version::LeftGuardScorer
-               when Position::CENTER
+               when position_class::CENTER
                  @game_version::CenterScorer
-               when Position::RIGHT_GUARD
+               when position_class::RIGHT_GUARD
                  @game_version::RightGuardScorer
-               when Position::RIGHT_TACKLE
+               when position_class::RIGHT_TACKLE
                  @game_version::RightTackleScorer
-               when Position::FULLBACK
+               when position_class::FULLBACK
                  @game_version::FullbackScorer
-               when Position::FREE_SAFETY
+               when position_class::FREE_SAFETY
                  @game_version::FreeSafetyScorer
-               when Position::STRONG_SAFETY
+               when position_class::STRONG_SAFETY
                  @game_version::StrongSafetyScorer
-               when Position::RIGHT_OUTSIDE_LINEBACKER
+               when position_class::RIGHT_OUTSIDE_LINEBACKER
                  @game_version::RightOutsideLinebackerScorer
-               when Position::MIDDLE_LINEBACKER
+               when position_class::MIDDLE_LINEBACKER
                  @game_version::MiddleLinebackerScorer
-               when Position::LEFT_OUTSIDE_LINEBACKER
+               when position_class::LEFT_OUTSIDE_LINEBACKER
                  @game_version::LeftOutsideLinebackerScorer
-               when Position::LEFT_END
+               when position_class::LEFT_END
                  @game_version::LeftEndScorer
-               when Position::RIGHT_END
+               when position_class::RIGHT_END
                  @game_version::RightEndScorer
-               when Position::DEFENSIVE_TACKLE
+               when position_class::DEFENSIVE_TACKLE
                  @game_version::DefensiveTackleScorer
-               when Position::CORNERBACK
+               when position_class::CORNERBACK
                  @game_version::CornerbackScorer
                else
                  BaseScorer
                end
 
     @klass.new card: @card, style: @style
+  end
+
+  def position_class
+    Object.const_get("#{ Mutreborn::Application::DEFAULT_GAME_VERSION.camelize }::Position")
   end
 end

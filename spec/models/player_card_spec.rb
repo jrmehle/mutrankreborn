@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe PlayerCard, type: :model do
   let(:team_chemistry) do
-    Chemistry.create(name: Team.city_and_team_name(team_city_or_team_name: :minnesota))
+    Chemistry.create(name: Object.const_get("#{ Mutreborn::Application::DEFAULT_GAME_VERSION.camelize }::Team").city_and_team_name(team_city_or_team_name: :minnesota))
   end
   let(:program) do
     Program.create(name: 'Core')
@@ -32,7 +32,7 @@ RSpec.describe PlayerCard, type: :model do
   it { is_expected.to validate_presence_of :last_name }
   it { is_expected.to validate_presence_of :position }
   it { is_expected.to validate_inclusion_of(:position)
-    .in_array(Position.abbreviations) }
+    .in_array(Object.const_get("#{ Mutreborn::Application::DEFAULT_GAME_VERSION.camelize }::Position").abbreviations) }
   it { is_expected.to validate_inclusion_of(:overall).in_range(1..99) }
   it { is_expected.to validate_inclusion_of(:trait_covers_ball)
     .in_array(['Always', 'Brace for All Hits', 'Brace vs. Medium Hitters']) }

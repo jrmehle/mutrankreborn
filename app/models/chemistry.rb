@@ -8,7 +8,7 @@ class Chemistry < ApplicationRecord
   scope :by_team_name, ->(name) { where(name: Team.city_and_team_name(team_city_or_team_name: name)) }
 
   def abbreviation
-    team_abbreviation = Team.abbreviation(city_name: name)
+    team_abbreviation = Object.const_get("#{ Mutreborn::Application::DEFAULT_GAME_VERSION.camelize }::Team").abbreviation(city_name: name)
     return team_abbreviation if team_abbreviation
 
     case name

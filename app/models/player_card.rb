@@ -12,7 +12,7 @@ class PlayerCard < ApplicationRecord
   validates :last_name, presence: true
   validates :position,
     presence: true,
-    inclusion: { in: Position.abbreviations }
+    inclusion: { in: Object.const_get("#{ Mutreborn::Application::DEFAULT_GAME_VERSION.camelize }::Position").abbreviations }
   validates :overall, inclusion: { in: 1..99 }
   validates :trait_covers_ball,
     inclusion: { in: ['Always', 'Brace for All Hits', 'Brace vs. Medium Hitters'], allow_nil: true }

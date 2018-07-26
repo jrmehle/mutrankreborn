@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe PlayerStat do
+RSpec.describe Madden19::PlayerStat do
   describe ".stat_abbreviation" do
     it 'takes a stat name as a string and returns its abbreviation' do
       expect(described_class.stat_abbreviation(stat_name: 'speed')).to eq('SPD')
